@@ -1,0 +1,35 @@
+#title {
+    font-size: 32px;
+}
+nav {
+    text-align: left;
+}
+@mixin shadows {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    margin: 10px;
+}
+.category {
+    @include shadows;
+}
+.goal {
+    @include shadows;
+    margin: 5px;
+}
+.node {
+    margin: 2.5px;
+}
+.node .fa-link {
+    display: none;
+}
+.node .fa-link.active {
+    display: inline;
+}
+/* Reuseable */
+.clickable {
+    cursor: pointer;
+}
+.clickable:hover {
+    color: red;
+}

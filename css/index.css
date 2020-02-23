@@ -1,0 +1,52 @@
+/* line 1, scss/index.scss */
+#title {
+  font-size: 32px;
+}
+
+/* line 4, scss/index.scss */
+nav {
+  text-align: left;
+}
+
+/* line 13, scss/index.scss */
+.category {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin: 10px;
+}
+
+/* line 16, scss/index.scss */
+.goal {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin: 10px;
+  margin: 5px;
+}
+
+/* line 20, scss/index.scss */
+.node {
+  margin: 2.5px;
+}
+
+/* line 23, scss/index.scss */
+.node .fa-link {
+  display: none;
+}
+
+/* line 26, scss/index.scss */
+.node .fa-link.active {
+  display: inline;
+}
+
+/* Reuseable */
+/* line 30, scss/index.scss */
+.clickable {
+  cursor: pointer;
+}
+
+/* line 33, scss/index.scss */
+.clickable:hover {
+  color: red;
+}
