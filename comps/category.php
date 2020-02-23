@@ -1,12 +1,7 @@
-<div class="category">
-    <header>Category 1</header>
-    <div class="contents">
-        <?php include("goal.php"); ?>
+<template id="template-category">
+    <div class="category">
+        <header><span class="title">Category Untitled</span></header>
+        <div class="list-habits">
+        </div>
     </div>
-</div>
-<div class="category">
-    <header>Category 1</header>
-    <div class="contents">
-        <?php include("goal.php"); ?>
-    </div>
-</div>
+</template>

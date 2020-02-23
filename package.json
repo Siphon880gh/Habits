@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "concurrently 'compass watch ./' 'livereload .' 'watch \"npm run js_docs_run\" js/'",
-    "js_docs_run": "jsdoc js/*"
+    "js_docs_run": "jsdoc -c jsdoc.json"
   },
   "author": "",
   "license": "ISC",

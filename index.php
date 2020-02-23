@@ -19,11 +19,14 @@
             <div id="title">Habit App</div>
             <?php include("comps/nav.php"); ?>
 
-            <main>
-                <?php include("comps/category.php"); ?>
+            <main class="list-categories">
             </main>
 
         </div> <!-- /.container -->
+
+        <!-- Templates -->
+        <?php include("comps/category.php"); ?>
+        <?php include("comps/habit.php"); ?>
         
         <!-- Designer: Open Sans, Lato, FontAwesome, Waypoints, Skrollr, Pixel-Em-Converter -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300" rel="stylesheet">
