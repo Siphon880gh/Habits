@@ -1,11 +1,11 @@
 {
     "recurseDepth": 10,
     "source": {
-        "include": ["comps", "comps", "js"],
+        "include": ["js", "comps"],
         "exclude": ["js/vendors", "js/vendor", "node_modules"]
     },
     "tags": {
         "allowUnknownTags": true,
         "dictionaries": ["jsdoc","closure"]
     }
-}
+  }

@@ -31,6 +31,7 @@ function creatingNewHabit(which) {
     if(what.length && what!==null && typeof what!=="undefined") {
         // Init
         var atTop = confirm("Insert at the top?");
+        var $dest = $(`.category:Contains(${which}) .list-habits`)
 
         // Grab template
         var template = $("#template-habit").html();
@@ -40,9 +41,11 @@ function creatingNewHabit(which) {
         $template.find("header .title").text(what);
 
         if(atTop) {
-            alert("Inserting to the top.");
+            // alert("Inserting to the top.");
+            $dest.prepend($template);
         } else {
-            alert("Inserting to the bottom.");
+            // alert("Inserting to the bottom.");
+            $dest.append($template);
         }
     }
 } // creatingNewHabit

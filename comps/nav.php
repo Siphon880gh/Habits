@@ -46,4 +46,4 @@ nav {
     {{/each}}
 </template>
 
-<script src="nav.js"></script>
+<script src="comps/nav.js"></script>
