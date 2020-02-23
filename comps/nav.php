@@ -47,6 +47,30 @@ nav {
 </template>
 
 <script>
+function creatingNewCategory() {
+    var what = prompt("What is the new category called?");
+    if(what.length && what!==null && typeof what!=="undefined") {
+        var sort = confirm("Insert at the top?");
+        if(sort) {
+            alert("Inserting to the top.");
+        } else {
+            alert("Inserting to the bottom.");
+        }
+    }
+} // creatingNewCategory
+function creatingNewHabit(option) {
+    var where = prompt(`Name the new habit in category "${option}"`);
+    if(where.length && where!==null && typeof where!=="undefined") {
+        var sort = confirm("Insert at the top?");
+        if(sort) {
+            alert("Inserting to the top.");
+        } else {
+            alert("Inserting to the bottom.");
+        }
+    }
+} // creatingNewHabit
+
+
     $(document).on("show.bs.modal", "#modal-add", ()=> {
         // alert('loaded');
         var templater = Handlebars.compile( $("#template-dropdown--adder").html() );
@@ -61,9 +85,9 @@ nav {
             var option = $("#modal-add select")[0][i];
             var isUserWantsNewCategory = option.value==="new-category";
             if(isUserWantsNewCategory) {
-                alert("Creating new category");
+                creatingNewCategory();
             } else {
-                alert("Creating new habit");
+                creatingNewHabit(option.value);
             } 
             $("#modal-add").modal("hide");
         })
