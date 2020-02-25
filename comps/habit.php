@@ -1,6 +1,6 @@
 <template id="template-habit">
     <div class="habit">
-        <header><span class="title">Habit Untitled</span></header>
+        <header><span class="title">${Habit Untitled}$</span></header>
         <nav>
             <div class="msgs-container msgs-container-grouper">
                 <span class="msgs-label">Grouper (eg. weekly etc): </span>

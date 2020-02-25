@@ -44,7 +44,7 @@
     <option value=""></option>
     <option value="new-category">< Create new category! ></option>
     {{#each categories}}
-        <option value="{{this}}">{{this}}</option>
+        <option value="{{this.index}}">{{this}}</option>
     {{/each}}
 </template>
 
