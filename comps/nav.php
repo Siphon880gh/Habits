@@ -1,14 +1,16 @@
 <style>
-nav {
+#nav-main {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
     width: 75px;
     margin: 5px 0;
     padding: 5px 5px;
+
+    text-align: left;
 }
 </style>
 
-<nav>
+<nav id="nav-main">
     <div class="fa fa-plus clickable"  data-toggle="modal" data-target="#modal-add"></div>
 </nav>
 
@@ -20,10 +22,10 @@ nav {
     <div class="modal-content">
         <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add category or goal</h4>
+        <h4 class="modal-title">Add category or habit</h4>
         <small>
         </p>
-        <p>You can add a new category (such as Fitness). Or you can add a new habit by selecting a category (such as Fitness -> Exercising).</p>
+        <p>You can add a new category of life or add a habit under a category. Eg. Category "Health" -> Habit "Exercising", "Health" -> "Drinking water".</p>
         </small>
         </div>
         <div class="modal-body">

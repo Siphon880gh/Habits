@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../offline/assets/bootstrap.min.css" data-old="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="../../offline/assets/jquery-2.1.4.min.js" data-old="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="../../offline/assets/handlebars.js" data-old="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="../../offline/assets/jquery.livequery.js" data-old="https://raw.githack.com/hazzik/livequery/master/src/jquery.livequery.js"></script>
+    <script src="js/vendors/multi-text-states.js"></script>
         
     <link href="css/index.css?v=<?php echo time(); ?>" rel="stylesheet">
     <script src="js/app.js?v=<?php echo time(); ?>"></script>
@@ -16,7 +18,7 @@
 </head>
     <body>
         <div class="container">
-            <div id="title">Habit App</div>
+            <div id="title">Habit Prototype (Not Designed)</div>
             <?php include("comps/nav.php"); ?>
 
             <main class="list-categories">
@@ -36,9 +38,8 @@
         <script src="../../offline/assets/skrollr.min.js" data-old="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
         <script src="../../offline/assets/pxem.jQuery.js" data-old="https://raw.githack.com/filamentgroup/jQuery-Pixel-Em-Converter/master/pxem.jQuery.js"></script>
         
-        <!-- Rendering: Handlebars JS, LiveQuery, Sprintf JS -->
+        <!-- Rendering: Handlebars JS, Sprintf JS -->
         <script src="../../offline/assets/handlebars.js" data-old="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-        <script src="../../offline/assets/jquery.livequery.js" data-old="https://raw.githack.com/hazzik/livequery/master/src/jquery.livequery.js"></script>
         <script src="../../offline/assets/jquery.sprintf.js" data-old="https://raw.githack.com/azatoth/jquery-sprintf/master/jquery.sprintf.js"></script>
         
         <!-- Compatibility: Modernizr, jQuery Migrate (check browser) -->
