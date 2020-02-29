@@ -19,7 +19,6 @@ function creatingNewCategory() {
             // alert("Inserting to the bottom.");
             $dest.append($template);
         }
-        
         save();
     } // valid
 } // creatingNewCategory
@@ -81,6 +80,3 @@ $(document).on("show.bs.modal", "#modal-add", ()=> {
 $(document).on("hide.bs.modal", "#modal-add", ()=> {
     $("#modal-add select").off("change"); // must
 }); // ondom
-
-$(()=>{
-});

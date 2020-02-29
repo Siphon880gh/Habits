@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check login
 if(isset($_POST["username"]) && isset($_POST["passw"]) ) {
 	$folder = $_POST["username"];
 	$filename_ = $_POST["passw"];
@@ -10,10 +9,11 @@ if(isset($_POST["username"]) && isset($_POST["passw"]) ) {
 
 	if(file_exists("../data/$folder/$filename.txt")) {
 		$_SESSION["loggedIn"]=1;
-		$_SESSION["filepath"]="../data/$folder/$filename.txt";
+		$_SESSION["filepath"]="data/$folder/$filename.txt";
 		header("location: ../index.php");
 	} else {
-		header("location: login.php");
+        echo "<div>Access denied</div>";
+        // echo '<meta http-equiv="refresh" content="2; URL=../" />';
 	} // else
 } // username and passw
 ?>

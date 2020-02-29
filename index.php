@@ -1,11 +1,13 @@
 <?php
 session_start();
-if(isset($_SESSION["loggedIn"]) && isset($_SESSION["filepath"]));
-else {
-    echo '<meta http-equiv="refresh" content="2; URL=access/login.php" />';
-    echo "Access denied. Please login...<br/><br/>";
-    die();
-}
+
+//     include("access/api-grant-guest.php");
+// }
+// if(!isset($_GET["guest"]) && (!isset($_SESSION["loggedIn"]) || !isset($_SESSION["filepath"]))) {
+//     echo '<meta http-equiv="refresh" content="2; URL=access/login.php" />';
+//     echo "Access denied. Please login...<br/><br/>";
+//     die();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,14 +32,44 @@ else {
             <div id="title">Prototype (Not Designed)</div>
             <?php include("comps/nav.php"); ?>
 
+            <?php
+                // if(isset($_SESSION["filepath"])) {
+                //     var_dump("filepath: " . $_SESSION['filepath'] . " << Expect 5f4* for wff; Expect 084* if guest.");
+                //     var_dump("loggedIn:" . isset($_SESSION["loggedIn"]) . "<< Expect 1 for wff");
+                // }
+            ?>
+
             <main class="list-categories">
+            <?php
+                if(isset($_GET["guest"])) {
+                    include("access/include-guest.php");
+                } else if(isset($_SESSION["loggedIn"]) && isset($_SESSION["filepath"])) {
+                    if(strpos($_SESSION["filepath"], md5("guest"))===false) { // reassert is user, not guest
+                        include("access/include-user.php");
+                    } else { // is guest but no URL param guest
+                        unset($_SESSION["filepath"]);
+                    }
+                } // user account
+            ?>
             </main>
+
+            <div style="margin-top:20px;">
+                    <div>To rearrange visually</div>
+                    <div>
+                        <a href="?guest">Guest</a>
+                        <span>&nbsp;</span>
+                        <a href="access/login.php">Login</a>
+                        <span>&nbsp;</span>
+                        <a href="access/refresh-logout.php">Logout</a>
+                    </div>
+            </div>
 
         </div> <!-- /.container -->
 
         <!-- Templates -->
         <?php include("comps/category.php"); ?>
         <?php include("comps/habit.php"); ?>
+
         
         <!-- Designer: Open Sans, Lato, FontAwesome, Waypoints, Skrollr, Pixel-Em-Converter -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300" rel="stylesheet">

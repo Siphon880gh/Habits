@@ -1,0 +1,15 @@
+<div class="category">
+        <header><span class="title">Test Guest Category 3</span></header>
+        <div class="list-habits">
+        </div>
+    </div>
+            <div class="category">
+        <header><span class="title">Test Guest Category 2</span></header>
+        <div class="list-habits">
+        </div>
+    </div>
+            <div class="category">
+        <header><span class="title">Test Guest Category</span></header>
+        <div class="list-habits">
+        </div>
+    </div>                        
