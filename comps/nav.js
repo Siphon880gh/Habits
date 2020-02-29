@@ -19,7 +19,9 @@ function creatingNewCategory() {
             // alert("Inserting to the bottom.");
             $dest.append($template);
         }
-    }
+        
+        save();
+    } // valid
 } // creatingNewCategory
 
 /**
@@ -48,7 +50,9 @@ function creatingNewHabit(which, pos) {
             // alert("Inserting to the bottom.");
             $dest.append($template);
         }
-    }
+
+        save();
+    } // valid
 } // creatingNewHabit
 
 

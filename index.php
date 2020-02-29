@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION["loggedIn"]) && isset($_SESSION["filepath"]));
+else {
+    echo '<meta http-equiv="refresh" content="2; URL=access/login.php" />';
+    echo "Access denied. Please login...<br/><br/>";
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +27,7 @@
 </head>
     <body>
         <div class="container">
-            <div id="title">Habit Prototype (Not Designed)</div>
+            <div id="title">Prototype (Not Designed)</div>
             <?php include("comps/nav.php"); ?>
 
             <main class="list-categories">

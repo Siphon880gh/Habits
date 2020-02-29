@@ -5,3 +5,5 @@
         </div>
     </div>
 </template>
+
+<script src="comps/category.js"></script>
