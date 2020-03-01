@@ -1,0 +1,1 @@
+<div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>

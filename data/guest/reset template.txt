@@ -1,17 +1,7 @@
-<?php if(isset($comps_habit)) return; ?>
-
-<style>
-.habit nav .msgs .msg.active {
-    display: inline;
-}
-.habit nav .msgs .msg:not(.active) {
-    display: none;
-}
-</style>
-
-<template id="template-habit">
-    <div class="habit">
-        <header><span class="title">${Habit Untitled}$</span></header>
+<div class="category">
+        <header><span class="title">Test</span></header>
+        <div class="list-habits"><div class="habit">
+        <header><span class="title">test</span></header>
         <nav>
 
             <!-- Grouper aka group together logs -->
@@ -54,12 +44,8 @@
             </div>
         </nav>
         <div class="logs">
-            <?php include("comps/log.php"); ?>
+            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+    </div>
         </div>
     </div>
-</template>
-
-<script src="comps/habit.js"></script>
-
-
-<?php $comps_habit=1; ?>
+                        

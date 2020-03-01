@@ -1,0 +1,9 @@
+.mts-msg.active {
+    display: inline;
+}
+.mts-msg:not(.active) {
+    display: none;
+}
+.clickable {
+    cursor: pointer;
+}

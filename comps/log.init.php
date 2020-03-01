@@ -1,6 +1,22 @@
 <?php if(isset($comps_log)) return; ?>
 
 <style>
+    .color0 {
+        border-top-color: purple !important;
+    }
+    .color1 {
+        border-top-color: red !important;
+    }
+    .color2 {
+        border-top-color: blue !important;
+    }
+    .color3 {
+        border-top-color: green !important;
+    }
+    .color4 {
+        border-top-color: orange !important;
+    }
+
     .logs {
         padding: 5px;
     }
@@ -13,10 +29,19 @@
         border-radius: 5px;
         font-weight: 400;
         padding: 5px;
-        margin: 5px;
+        margin: 7.5px;
+        position: relative;
+    }
+    .log:hover {
+        /* background-color: #ffbbbb; */
+        opacity: .75;
     }
     .log .chain-icon {
         visibility: hidden;
+        position: absolute;
+        top: 10px;
+        right: -13.5px;
+        font-size: 10px;
     }
     .log .chain-icon.active {
         visibility: visible;
@@ -27,6 +52,7 @@
         border: 1px solid green;
         display: inline-block;
         padding: 5px;
+        margin: 7.5px;
         border-radius: 5px;
         font-weight: 500;
     }
@@ -37,14 +63,9 @@
     }
 </style>
 
-<!-- General logs container which contains an Add Log -->
-<template id="template-logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</template>
-
 <!-- Individual log pills -->
 <template id="template-log">
-    <div class="log">
+    <div class="log clickable" data-unix>
         &nbsp;
         <span class="date"></span>
         <span class="fa fa-chain chain-icon"></span>

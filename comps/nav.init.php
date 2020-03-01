@@ -7,7 +7,6 @@
     width: 75px;
     margin: 5px 0;
     padding: 5px 5px;
-
     text-align: left;
 }
 </style>

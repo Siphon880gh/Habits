@@ -1,319 +1,77 @@
 
             
-            
-            
-            
-            
-            
-            
-            
             <div class="category">
-        <header><span class="title">Test Guest Category 3</span></header>
-        <div class="list-habits"><div class="habit">
-        <header><span class="title">I</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Group logs by color (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chain logs when between: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-
-            <div class="msgs-container msgs-container-chain-goal">
-                <span class="msgs-label">Desired consecutive chains in a group: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">1</span>
-                    <span style="display:none;">2</span>
-                    <span style="display:none;">3</span>
-                    <span style="display:none;">4</span>
-                    <span style="display:none;">5</span>
-                    <span style="display:none;">6</span>
-                    <span style="display:none;">7</span>
-                    <span style="display:none;">8</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
         <header><span class="title">Test</span></header>
+        <div class="list-habits"><div class="habit">
+        <header><span class="title">test</span></header>
         <nav>
+
+            <!-- Grouper aka group together logs -->
             <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Group logs by color (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
+                <span class="msgs-label">Group logs by color: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="1209600">2-weekly</span>
+                    <span class="mts-msg" data-seconds="1814400">3-weekly</span>
+                    <span class="mts-msg" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
                 </span>
             </div>
 
+            <!-- Chainer creates chain icons -->
             <div class="msgs-container msgs-container-chainer">
                 <span class="msgs-label">Chain logs when between: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
                 </span>
             </div>
 
-            <div class="msgs-container msgs-container-chain-goal">
+            <!-- Goal is how many chains in a group -->
+            <div class="msgs-container msgs-container-goal">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active">1</span>
+                    <span class="mts-msg">2</span>
+                    <span class="mts-msg">3</span>
+                    <span class="mts-msg">4</span>
+                    <span class="mts-msg">5</span>
+                    <span class="mts-msg">6</span>
+                    <span class="mts-msg">7</span>
+                    <span class="mts-msg">8</span>
                 </span>
             </div>
         </nav>
         <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">H</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">G</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">F</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">E</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">D</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">C</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">B</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
-    </div><div class="habit">
-        <header><span class="title">Habit A</span></header>
-        <nav>
-            <div class="msgs-container msgs-container-grouper">
-                <span class="msgs-label">Grouper (eg. weekly etc): </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">Weekly</span>
-                    <span style="display:none;">Monthly</span>
-                    <span style="display:none;">2-weekly</span>
-                    <span style="display:none;">3-weekly</span>
-                    <span style="display:none;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-            <div class="msgs-container msgs-container-chainer">
-                <span class="msgs-label">Chainer: </span>
-                <span class="msgs" style="cursor:pointer;">
-                    <span style="display:inline;">24h</span>
-                    <span style="display:none;">48h</span>
-                    <span style="display:none;">72h</span>
-                </span>
-            </div>
-        </nav>
-        <div class="logs">
-    <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>
-</div>
+            <div class="log clickable color0" data-unix="1583111933">
+        &nbsp;
+        <span class="date">03/01/20 17:18</span>
+        <span class="fa fa-chain chain-icon active"></span>
+    </div><div class="log clickable color0" data-unix="1583111933">
+        &nbsp;
+        <span class="date">03/01/20 17:18</span>
+        <span class="fa fa-chain chain-icon active"></span>
+    </div><div class="log clickable color0" data-unix="1583111934" style="display: none;">
+        &nbsp;
+        <span class="date">03/01/20 17:18</span>
+        <span class="fa fa-chain chain-icon active"></span>
+    </div><div class="log clickable color0" data-unix="1583111935" style="display: none;">
+        &nbsp;
+        <span class="date">03/01/20 17:18</span>
+        <span class="fa fa-chain chain-icon active"></span>
+    </div><div class="log clickable color0" data-unix="1583112095">
+        &nbsp;
+        <span class="date">03/01/20 17:21</span>
+        <span class="fa fa-chain chain-icon active"></span>
+    </div><div class="log clickable color0" data-unix="1583112097">
+        &nbsp;
+        <span class="date">03/01/20 17:21</span>
+        <span class="fa fa-chain chain-icon"></span>
+    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div>
         </div>
     </div>
-            <div class="category">
-        <header><span class="title">Test Guest Category 2</span></header>
-        <div class="list-habits">
-        </div>
-    </div>
-            <div class="category">
-        <header><span class="title">Test Guest Category</span></header>
-        <div class="list-habits">
-        </div>
-    </div>                                                                                                                                    
+                                                
