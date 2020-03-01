@@ -25,7 +25,14 @@ session_start();
         
     <link href="css/index.css?v=<?php echo time(); ?>" rel="stylesheet">
     <script src="js/app.js?v=<?php echo time(); ?>"></script>
-    
+
+    <?php
+        include("comps/nav.init.php");
+        include("comps/category.init.php");
+        include("comps/habit.init.php");
+        include("comps/log.init.php");
+    ?>
+
 </head>
     <body>
         <div class="container">
