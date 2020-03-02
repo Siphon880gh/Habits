@@ -142,17 +142,32 @@ function paintChains() {
     }); 
 
     // Colorize chains that are consecutive
-    // var $queueChains = [];
-    // var $activeChains = $(".chain-icon.active").toArray();
-    // for(var i= 0; i<$activeChains.length; i++) {
-    //     var $chain = $( chain[i] );
-    //     var $nextActiveChain = $chain.closest(".log").next(".log").find(".chain-icon.active");
-    //     var hasNextActiveChain = $nextActiveChain.length;
-    //     if(hasNextActiveChain) {
-    //         $queueChains.push($chain);
-    //     } else {
-    //         $queueChains = []; // reset
-    //     }
-    // } // for
+    var $queueChains = new Array();
+    var $activeChains = $(".chain-icon.active").toArray();
+    for(var i = $activeChains.length; i>=0; i--) {
+        var $chain = $( $activeChains[i] );
+        var $prevActiveChain = $chain.closest(".log").prev(".log").find(".chain-icon.active");
+        var hasPrevActiveChain = $prevActiveChain.length;
+        if(hasPrevActiveChain) {
+            $queueChains.push($chain);
+            // i--; // so will skip over prev chain
+            // FUTURE REDO: Remove redundancies. Currently will be O(N^2). Perhaps in the else branch, find a way to have the for-loop skip through chains that are looked at.
+        } else {
+            if($queueChains.length>1) {
+                $queueChains.push($chain);
+                var firstChained = $queueChains[0];
+                var $firstChained = $(firstChained);
+                var $firstChainedLog = $firstChained.closest(".log");
+                var color = $firstChainedLog.css("border-top-color");
+                for(var j=0; j<$queueChains.length; j++) {
+                    $queueChains[j].css("color", color);
+                    console.log("changed chain icon color");
+                } // for
+            } // if there are consecutive chains and we are at the end of it, color the consecutive chain per the group color
+
+            $queueChains = new Array(); // reset
+        }
+        console.log($queueChains);
+    } // for
 
 } // paintChains

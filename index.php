@@ -82,8 +82,8 @@ session_start();
 
         
         <!-- Designer: Open Sans, Lato, FontAwesome, Waypoints, Skrollr, Pixel-Em-Converter -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
         <link rel="stylesheet" href="../../offline/assets/font-awesome.css" data-old="../../offline/assets/font-awesome.css" data-old="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css">
         <script src="../../offline/assets/jquery.waypoints.min.js" data-old="../../offline/assets/jquery.waypoints.min.js" data-old="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
         <script src="../../offline/assets/skrollr.min.js" data-old="../../offline/assets/skrollr.min.js" data-old="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
