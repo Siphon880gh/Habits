@@ -1,10 +1,16 @@
 
+            
+            
+            
             <div class="category">
         <header><span class="title">Test</span></header>
-        <div class="list-habits"><div class="habit" data-last-completed-chain="1583215015">
+        <div class="list-habits"><div class="habit" data-last-completed-chain="1583217197">
         <header>
             <span class="title">test</span>
-            <div class="indicator-current-group-completed"><label>Current cycle:&nbsp;</label><span class="result">WIP</span></div>        </header>
+            <div class="indicator-current-group-completed">
+    <label>Current cycle:&nbsp;</label>
+    <span class="result">WIP</span>
+</div>        </header>
 
         <nav>
             <!-- Grouper aka group together logs -->
@@ -35,37 +41,41 @@
             <div class="msgs-container msgs-container-goal">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg active">1</span>
-                    <span class="mts-msg">2</span>
-                    <span class="mts-msg">3</span>
-                    <span class="mts-msg">4</span>
-                    <span class="mts-msg">5</span>
-                    <span class="mts-msg">6</span>
-                    <span class="mts-msg">7</span>
-                    <span class="mts-msg">8</span>
+                <span class="mts-msg active" data-seconds="86400">1</span>
+                <span class="mts-msg" data-seconds="172800">2</span>
+                <span class="mts-msg" data-seconds="259200">3</span>
+                <span class="mts-msg" data-seconds="345600">4</span>
+                <span class="mts-msg" data-seconds="432000">5</span>
+                <span class="mts-msg" data-seconds="518400">6</span>
+                <span class="mts-msg" data-seconds="604800">7</span>
+                <span class="mts-msg" data-seconds="691200">8</span>
                 </span>
             </div>
 
         </nav>
         <div class="logs">
-            <div class="log clickable color0" data-unix="1583215013">
+            <div class="log clickable color0" data-unix="1583216962">
         &nbsp;
-        <span class="date">03/02/20 21:56</span>
+        <span class="date">03/02/20 22:29</span>
         <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583215013">
+    </div><div class="log clickable color0" data-unix="1583217000">
         &nbsp;
-        <span class="date">03/02/20 21:56</span>
+        <span class="date">03/02/20 22:30</span>
         <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583215014">
+    </div><div class="log clickable color0" data-unix="1583217000">
         &nbsp;
-        <span class="date">03/02/20 21:56</span>
+        <span class="date">03/02/20 22:30</span>
         <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583215015">
+    </div><div class="log clickable color0" data-unix="1583217104">
         &nbsp;
-        <span class="date">03/02/20 21:56</span>
+        <span class="date">03/02/20 22:31</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
+    </div><div class="log clickable color0" data-unix="1583217197">
+        &nbsp;
+        <span class="date">03/02/20 22:33</span>
         <span class="fa fa-chain chain-icon"></span>
     </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div>
         </div>
     </div>
-                                    
+                                                                        
