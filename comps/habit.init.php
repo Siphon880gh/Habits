@@ -10,10 +10,13 @@
 </style>
 
 <template id="template-habit">
-    <div class="habit">
-        <header><span class="title">${Habit Untitled}$</span></header>
-        <nav>
+    <div class="habit" data-last-completed-chain="0">
+        <header>
+            <span class="title">${Habit Untitled}$</span>
+            <?php include("comps/indicator.php"); ?>
+        </header>
 
+        <nav>
             <!-- Grouper aka group together logs -->
             <div class="msgs-container msgs-container-grouper">
                 <span class="msgs-label">Group logs by color: </span>
@@ -52,6 +55,7 @@
                     <span class="mts-msg">8</span>
                 </span>
             </div>
+
         </nav>
         <div class="logs">
             <?php include("comps/log.php"); ?>

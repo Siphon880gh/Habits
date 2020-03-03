@@ -34,6 +34,7 @@ session_start();
         include("comps/category.init.php");
         include("comps/habit.init.php");
         include("comps/log.init.php");
+        include("comps/indicator.init.php");
     ?>
 
 </head>

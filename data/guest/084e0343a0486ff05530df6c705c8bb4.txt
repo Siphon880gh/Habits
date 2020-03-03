@@ -1,13 +1,11 @@
-
-            
-            
-            
-            <div class="category">
+<div class="category">
         <header><span class="title">Test</span></header>
-        <div class="list-habits"><div class="habit">
-        <header><span class="title">test</span></header>
-        <nav>
+        <div class="list-habits"><div class="habit" data-last-completed-chain="0">
+        <header>
+            <span class="title">test</span>
+            <div class="indicator-current-group-completed"><label>Current cycle:&nbsp;</label><span class="result">WIP</span></div>        </header>
 
+        <nav>
             <!-- Grouper aka group together logs -->
             <div class="msgs-container msgs-container-grouper">
                 <span class="msgs-label">Group logs by color: </span>
@@ -46,46 +44,11 @@
                     <span class="mts-msg">8</span>
                 </span>
             </div>
+
         </nav>
         <div class="logs">
-            <div class="log clickable color0" data-unix="1583111933">
-        &nbsp;
-        <span class="date">03/01/20 17:18</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583111933">
-        &nbsp;
-        <span class="date">03/01/20 17:18</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583111934" style="display: none;">
-        &nbsp;
-        <span class="date">03/01/20 17:18</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583111935" style="display: none;">
-        &nbsp;
-        <span class="date">03/01/20 17:18</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583112095">
-        &nbsp;
-        <span class="date">03/01/20 17:21</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
-    </div><div class="log clickable color0" data-unix="1583112097">
-        &nbsp;
-        <span class="date">03/01/20 17:21</span>
-        <span class="fa fa-chain chain-icon"></span>
-    </div><div class="log clickable color0" data-unix="1583205021">
-        &nbsp;
-        <span class="date">03/02/20 19:10</span>
-        <span class="fa fa-chain chain-icon active"></span>
-    </div><div class="log clickable color0" data-unix="1583205023">
-        &nbsp;
-        <span class="date">03/02/20 19:10</span>
-        <span class="fa fa-chain chain-icon active"></span>
-    </div><div class="log clickable color0" data-unix="1583208073">
-        &nbsp;
-        <span class="date">03/02/20 20:01</span>
-        <span class="fa fa-chain chain-icon"></span>
-    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div>
         </div>
     </div>
-                                                                        
+                        

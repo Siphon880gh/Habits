@@ -47,8 +47,30 @@ function paintChains() {
     var $logContainers = $(".logs");
 
     // At every habit's logs containers
-    $logContainers.each((i, logContainers)=>{ 
-        var $logs = $(logContainers).find(".log");
+    $logContainers.each((i, logContainer)=>{ 
+        // init
+        var $logContainer = $(logContainer);
+        var $logs = $logContainers.find(".log");
+        var $habit = $logContainer.closest(".habit");;
+
+        // validate
+        if($logs.length==0) return true;
+
+        // components
+        var lastCompletedChain_old = $habit.attr("data-last-completed-chain");
+        var lastCompletedChain_new = $logs.eq( $logs.length - 1 ).attr("data-unix");
+
+        // coerce types
+        lastCompletedChain_old = parseInt(lastCompletedChain_old);
+        lastCompletedChain_new = parseInt(lastCompletedChain_new);
+        // - validate
+        if(isNaN(lastCompletedChain_old)) { console.error("Error: lastCompletedChain_old not an integer"); return true; }
+        if(isNaN(lastCompletedChain_new)) { console.error("Error: lastCompletedChain_new not an integer"); return true; }
+
+        if(lastCompletedChain_new > lastCompletedChain_old) {
+            $habit.attr("data-last-completed-chain", lastCompletedChain_new);
+            console.log("proc changed last completed chain attribute at habit DOM");
+        }
         
         // At a habit's logs container's logs
         $logs.each((j, log)=>{ 
@@ -169,5 +191,7 @@ function paintChains() {
         }
         console.log($queueChains);
     } // for
+
+    setTimeout(save, 200);
 
 } // paintChains
