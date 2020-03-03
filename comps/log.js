@@ -78,7 +78,7 @@ function paintChains() {
             var tcurrent = $current.attr("data-unix");
             tcurrent = parseInt(tcurrent);
 
-            // Paint chain icon if there is a next node and that node's time is within the acceptable seconds parameter from the current node
+            // Render chain icon if there is a next node and that node's time is within the acceptable seconds from the current node
             if($current.next(".log").length) { // left to right
                 var $next = $current.next(".log");
 
@@ -100,27 +100,27 @@ function paintChains() {
                 $current.find(".chain-icon").toggleClass("active", diffSeconds < acceptableSeconds);
             }; // if there is a next log
 
-                // Color groups
-                var $log0 = $logs.eq(0);
-                var tfirst = $log0.attr("data-unix");
-                tfirst = parseInt(tfirst);
+            // Group logs by color: Non-first logs
+            var $log0 = $logs.eq(0);
+            var tfirst = $log0.attr("data-unix");
+            tfirst = parseInt(tfirst);
 
-                var grouper = $(".msgs-container-grouper .mts-msg.active").attr("data-seconds");
-                grouper = parseInt(grouper);
-                var groupNum_ = Math.floor( (tcurrent-tfirst)/grouper );
-                var groupNum = groupNum_ % 4;
+            var grouper = $(".msgs-container-grouper .mts-msg.active").attr("data-seconds");
+            grouper = parseInt(grouper);
+            var groupNum_ = Math.floor( (tcurrent-tfirst)/grouper );
+            var groupNum = groupNum_ % 4;
 
-                console.log(`node #${$current.index()} << Expected to increase over time from 0.`);
-                console.log(`groupNum: ${groupNum} << Expected to increase over time then circle back to zero.`);
+            console.log(`node #${$current.index()} << Expected to increase over time from 0.`);
+            console.log(`groupNum: ${groupNum} << Expected to increase over time then circle back to zero.`);
 
-                $current.removeClass("color0 color1 color2 color3 color4");
-                switch (groupNum) {
-                    case 0: $current.addClass("color0"); break;
-                    case 1: $current.addClass("color1"); break;
-                    case 2: $current.addClass("color2"); break;
-                    case 3: $current.addClass("color3"); break;
-                    case 4: $current.addClass("color4"); break;
-                } // switch
+            $current.removeClass("color0 color1 color2 color3 color4"); // resets color
+            switch (groupNum) {
+                case 0: $current.addClass("color0"); break;
+                case 1: $current.addClass("color1"); break;
+                case 2: $current.addClass("color2"); break;
+                case 3: $current.addClass("color3"); break;
+                case 4: $current.addClass("color4"); break;
+            } // switch
 
             // console.log($log);
     
@@ -128,7 +128,7 @@ function paintChains() {
 
     }); // logsContainer
 
-    // Paint group color on first log
+    // Group logs by color: First logs
     var $firstLogs = $(".logs > .log:first-child()");
     $firstLogs.each((i, firstLog)=>{
         var $firstLog = $(firstLog);
@@ -163,7 +163,7 @@ function paintChains() {
         } // next log exist
     }); 
 
-    // Colorize chains that are consecutive
+    // Color chain icons that are consecutive
     var $queueChains = new Array();
     var $activeChains = $(".chain-icon.active").toArray();
     for(var i = $activeChains.length; i>=0; i--) { // Right to left
