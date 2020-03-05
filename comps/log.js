@@ -15,6 +15,7 @@ $(".log").livequery( (i,el)=> {
                 $el.fadeOut(300, ()=> { $(this).remove(); });
 
                 setTimeout(()=> { paintChains(); }, 100);
+                setTimeout(()=> { paintIndicators(); }, 150);
                 setTimeout(()=> { save(); }, 200);
         } // want to remove
     }); // click => remove
@@ -38,6 +39,7 @@ $(".add-log").livequery( (i,el)=> {
         $log.insertBefore($add);
 
         setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintIndicators(); }, 150);
         setTimeout(()=> { save(); }, 200);
     })
 });
@@ -51,27 +53,10 @@ function paintChains() {
         // init
         var $logContainer = $(logContainer);
         var $logs = $logContainers.find(".log");
-        var $habit = $logContainer.closest(".habit");;
 
         // validate
         if($logs.length==0) return true;
 
-        // components
-        var lastCompletedChain_old = $habit.attr("data-last-completed-chain");
-        var lastCompletedChain_new = $logs.eq( $logs.length - 1 ).attr("data-unix");
-
-        // coerce types
-        lastCompletedChain_old = parseInt(lastCompletedChain_old);
-        lastCompletedChain_new = parseInt(lastCompletedChain_new);
-        // - validate
-        if(isNaN(lastCompletedChain_old)) { console.error("Error: lastCompletedChain_old not an integer"); return true; }
-        if(isNaN(lastCompletedChain_new)) { console.error("Error: lastCompletedChain_new not an integer"); return true; }
-
-        if(lastCompletedChain_new > lastCompletedChain_old) {
-            $habit.attr("data-last-completed-chain", lastCompletedChain_new);
-            console.log("proc changed last completed chain attribute at habit DOM");
-        }
-        
         // At a habit's logs container's logs
         $logs.each((j, log)=>{ 
             var $current = $(log);
@@ -188,8 +173,10 @@ function paintChains() {
                 var $leftMostChainLog = $leftMostChain.closest(".log");
                 var color = $leftMostChainLog.css("border-top-color"); // color of the consecutive chain icons will be in the color of the group of the left-most chain which started the consecutive chain
                 for(var j=0; j<$queueChains.length; j++) {
-                    $queueChains[j].css("color", color);
-                    $queueChains[j].data("visited", 1); // temp flag
+                    let $queueChain = $queueChains[j];
+                    setLastCompletedChain($queueChain);
+                    $queueChain.css("color", color);
+                    $queueChain.data("visited", 1); // temp flag
                     console.log("Changed chain icon color"); // To bring speed down from O(N^2).
                 } // for
             } // if there are consecutive chains and we are at the end of it, color the consecutive chain per the group color
@@ -202,3 +189,23 @@ function paintChains() {
     setTimeout(save, 200);
 
 } // paintChains
+
+function setLastCompletedChain($lastCompletedChain) {
+    // components
+    var $habit = $lastCompletedChain.closest(".habit");
+    var lastCompletedChain_old = $habit.attr("data-last-completed-chain");
+    var lastCompletedChain_new = $lastCompletedChain.closest(".log").attr("data-unix");
+
+    // coerce types
+    lastCompletedChain_old = parseInt(lastCompletedChain_old);
+    lastCompletedChain_new = parseInt(lastCompletedChain_new);
+
+    // validate
+    if(isNaN(lastCompletedChain_old)) { console.error("Error: lastCompletedChain_old not an integer"); return true; }
+    if(isNaN(lastCompletedChain_new)) { console.error("Error: lastCompletedChain_new not an integer"); return true; }
+
+    if(lastCompletedChain_new > lastCompletedChain_old) {
+        $habit.attr("data-last-completed-chain", lastCompletedChain_new);
+        console.log("proc changed last completed chain attribute at habit DOM");
+    }
+}

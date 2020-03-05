@@ -4,12 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "concurrently 'compass watch ./' 'livereload .' 'watch \"npm run js_docs_run\"'",
-    "js_docs_run": "jsdoc -c jsdoc.json"
+    "watch": "concurrently 'compass watch ./' 'livereload --ignore out/' 'watch \"npm run js_docs\"'",
+    "js_docs": "jsdoc -c jsdoc.json"
+  },
+  "watch": {
+    "js_docs": {
+      "patterns": "**/*.js",
+      "ignore": "out/*",
+      "extensions": "js,jsx",
+      "quiet": false,
+      "delay": 2500
+    }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "livereload-js": "^3.2.1"
+    "node-livereload": "^0.6.0",
+    "npm-watch": "^0.6.0",
+    "run-when-changed": "^2.1.0"
   }
 }

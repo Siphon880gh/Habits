@@ -7,10 +7,19 @@
 .habit nav .msgs .msg:not(.active) {
     display: none;
 }
+.habit {
+    position: relative;
+}
+.nav-habit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 </style>
 
 <template id="template-habit">
     <div class="habit" data-last-completed-chain="0">
+        <nav class="nav-habit"><span class="fa fa-cross clickable"></span></nav>
         <header>
             <span class="title">${Habit Untitled}$</span>
             <?php include("comps/indicator.php"); ?>

@@ -4,10 +4,14 @@
 #nav-main {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
-    width: 75px;
+    min-width: 75px;
     margin: 5px 0;
     padding: 5px 5px;
     text-align: left;
+    font-size: 2rem;
+}
+#nav-main .fa {
+    margin-right: 2ch; 
 }
 </style>
 

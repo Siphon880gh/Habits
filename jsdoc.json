@@ -2,7 +2,7 @@
     "recurseDepth": 10,
     "source": {
         "include": ["js", "comps"],
-        "exclude": ["js/vendors", "js/vendor", "node_modules"]
+        "exclude": ["js/vendors", "js/vendor", "node_modules", "out"]
     },
     "tags": {
         "allowUnknownTags": true,
