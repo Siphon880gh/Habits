@@ -158,26 +158,34 @@ function paintChains() {
         console.error("Error goalConsecutiveChains is not an integer."); 
         return false; 
     };
-    for(var i = $activeChains.length; i>=0; i--) { // Right to left
+    for(var i = $activeChains.length-1; i>=0; i--) { // Right to left
         var $chain = $( $activeChains[i] );
-        if($chain.data("visited")) continue; // temp flag
+        // if($chain.data("visited")) continue; // temp flag
 
         var $prevActiveChain = $chain.closest(".log").prev(".log").find(".chain-icon.active");
         var hasPrevActiveChain = $prevActiveChain.length;
         if(hasPrevActiveChain) {
             $queueChains.push($chain);
         } else {
-            if($queueChains.length>=goalConsecutiveChains) {
+            debugger;
+            if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
+                var $onlyChain = $chain;
+                var $onlyChainLog = $onlyChain.closest(".log");
+                var color = $onlyChainLog.css("border-top-color"); 
+                setLastCompletedChain($onlyChain);
+                $onlyChain.css("color", color);
+            } else if($activeChains.length!==1 && $queueChains.length>=goalConsecutiveChains-1) {
                 $queueChains.push($chain); // on the left most active chain icon
                 var $leftMostChain = $chain;
                 var $leftMostChainLog = $leftMostChain.closest(".log");
                 var color = $leftMostChainLog.css("border-top-color"); // color of the consecutive chain icons will be in the color of the group of the left-most chain which started the consecutive chain
                 for(var j=0; j<$queueChains.length; j++) {
                     let $queueChain = $queueChains[j];
+                    // if(queueChain.data("visited")) continue; // temp flag
                     setLastCompletedChain($queueChain);
                     $queueChain.css("color", color);
-                    $queueChain.data("visited", 1); // temp flag
-                    console.log("Changed chain icon color"); // To bring speed down from O(N^2).
+                    // $queueChain.data("visited", 1); // temp flag
+                    console.log("Changed chain icon color");
                 } // for
             } // if there are consecutive chains and we are at the end of it, color the consecutive chain per the group color
 
