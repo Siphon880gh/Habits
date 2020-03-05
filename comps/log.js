@@ -38,9 +38,9 @@ $(".add-log").livequery( (i,el)=> {
         $log.find(".date").text(humanReadable)
         $log.insertBefore($add);
 
-        setTimeout(()=> { paintChains(); }, 100);
-        setTimeout(()=> { paintIndicators(); }, 150);
-        setTimeout(()=> { save(); }, 200);
+        // setTimeout(()=> { paintChains(); }, 100);
+        // setTimeout(()=> { paintIndicators(); }, 150);
+        // setTimeout(()=> { save(); }, 200);
     })
 });
 
