@@ -12,8 +12,14 @@ $(".log").livequery( (i,el)=> {
         if(confirm(`Want to remove this log ${logText}?`)) {
             if(!$el.hasClass("log")) 
                 $el = $el.closest(".log");
-                $el.fadeOut(300, ()=> { $(this).remove(); });
 
+                var $habit = $el.closest(".habit");
+                $habit.attr("data-last-completed-chain", 0);
+                debugger;
+                
+                // $el.fadeOut(50, ()=> { $(this).remove(); }); // Do not fade because that just hides it
+                $el.remove();
+                
                 setTimeout(()=> { paintChains(); }, 100);
                 setTimeout(()=> { paintIndicators(); }, 150);
                 setTimeout(()=> { save(); }, 200);
@@ -38,9 +44,9 @@ $(".add-log").livequery( (i,el)=> {
         $log.find(".date").text(humanReadable)
         $log.insertBefore($add);
 
-        // setTimeout(()=> { paintChains(); }, 100);
-        // setTimeout(()=> { paintIndicators(); }, 150);
-        // setTimeout(()=> { save(); }, 200);
+        setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintIndicators(); }, 150);
+        setTimeout(()=> { save(); }, 200);
     })
 });
 
@@ -167,7 +173,7 @@ function paintChains() {
         if(hasPrevActiveChain) {
             $queueChains.push($chain);
         } else {
-            debugger;
+            // debugger;
             if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
                 var $onlyChain = $chain;
                 var $onlyChainLog = $onlyChain.closest(".log");

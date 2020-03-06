@@ -19,7 +19,7 @@ function paintIndicators() {
 
         // partials templates
         var $success = "<span class='indicator-good'>Good</span>";
-        var $fail = "<span class='indicator-wip'>WIP</span>";
+        var $fail = "<span class='indicator-wip'>WIP <span class='date-info'></span></span>";
 
         // calculate
         var diff = moment(moment.now()/1000, "unix").diff(lastCompleted);
