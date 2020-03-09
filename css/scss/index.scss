@@ -33,3 +33,9 @@
 .clickable:hover {
     color: red;
 }
+.edit-mode-component:not(.active) {
+    display: none;
+}
+.text-red {
+    color: red;
+}

@@ -54,7 +54,6 @@ function creatingNewHabit(which, pos) {
     } // valid
 } // creatingNewHabit
 
-
 $(document).on("show.bs.modal", "#modal-add", ()=> {
     // alert('loaded');
     var templater_dd = Handlebars.compile( $("#template-dropdown--adder").html() );

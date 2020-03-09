@@ -12,14 +12,14 @@
 }
 .nav-habit {
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 5px;
 }
 </style>
 
 <template id="template-habit">
     <div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit"><span class="fa fa-cross clickable"></span></nav>
+        <nav class="nav-habit edit-mode-component"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
         <header>
             <span class="title">${Habit Untitled}$</span>
             <?php include("comps/indicator.php"); ?>

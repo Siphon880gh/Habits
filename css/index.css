@@ -50,3 +50,13 @@
 .clickable:hover {
   color: red;
 }
+
+/* line 36, scss/index.scss */
+.edit-mode-component:not(.active) {
+  display: none;
+}
+
+/* line 39, scss/index.scss */
+.text-red {
+  color: red;
+}

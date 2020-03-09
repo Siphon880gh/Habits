@@ -15,7 +15,6 @@ $(".log").livequery( (i,el)=> {
 
                 var $habit = $el.closest(".habit");
                 $habit.attr("data-last-completed-chain", 0);
-                debugger;
                 
                 // $el.fadeOut(50, ()=> { $(this).remove(); }); // Do not fade because that just hides it
                 $el.remove();
@@ -179,6 +178,7 @@ function paintChains() {
                 var $onlyChainLog = $onlyChain.closest(".log");
                 var color = $onlyChainLog.css("border-top-color"); 
                 setLastCompletedChain($onlyChain);
+                console.log("setLastCompletedChain 1");
                 $onlyChain.css("color", color);
             } else if($activeChains.length!==1 && $queueChains.length>=goalConsecutiveChains-1) {
                 $queueChains.push($chain); // on the left most active chain icon
@@ -189,6 +189,7 @@ function paintChains() {
                     let $queueChain = $queueChains[j];
                     // if(queueChain.data("visited")) continue; // temp flag
                     setLastCompletedChain($queueChain);
+                    console.log("setLastCompletedChain 2");
                     $queueChain.css("color", color);
                     // $queueChain.data("visited", 1); // temp flag
                     console.log("Changed chain icon color");
