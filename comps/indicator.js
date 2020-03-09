@@ -16,44 +16,45 @@ function paintIndicators() {
         // coerce types
         lastCompleted = parseInt(lastCompleted);
         grouperSecs = parseInt(grouperSecs);
+        grouperMs = grouperSecs * 1000;
 
-        // TODO:
+        // different units required for calculations
         var unix_ms = moment.now();
         var unix_secs = Math.floor(unix_ms/1000);
-        console.log("unix_ms: " + unix_ms);
-        console.log("unix_secs: " + unix_secs);
+        // console.log("unix_ms: " + unix_ms); //eg. 1583804314588
+        // console.log("unix_secs: " + unix_secs); //1583804314
 
-        // Due time?
-        var hasLogs = $habit.find(".log").length;
-        if(!hasLogs || lastCompleted===0) {
-            console.log("No logs. Simply add the group time to current time. That's how much longer until current cycle is due.");
-            var diff = grouperSecs;
-            var result = moment(unix_ms).add(diff, "seconds").unix();
-            var daysLeft = Math.floor(parseInt(diff/86400));
-        } else {
-            console.log("Has logs. Find diff between last most log and current time and divide as necessary to get to the last group. That's how much longer until current cycle is due.")
-            // var diff = moment(unix_secs, "unix").diff(lastCompleted);
-            // var daysLeft = Math.floor(diff/grouperSecs);
-            var $leftMostLog = $habit.find(".log").eq(0);
-            var firstLogUnix = $leftMostLog.attr("data-unix");
-            firstLogUnix = parseInt(firstLogUnix); // seconds
-            firstLogUnixMs = firstLogUnix * 1000;
-            // TODO:
-            var diffMs = moment(unix_ms).diff(firstLogUnixMs);
-            var diffSecs = diffMs/1000;
-            var mixedFraction = diffSecs/grouper;
-            if(Math.floor(mixedFraction)===0)
-            var result_ = diff/grouperSecs;
-            var result = Math.floor(result_);
-            var daysLeft = Math.floor(parseInt(diff/86400));
-        }
+        var isRecentlyCompletedChain = moment(unix_ms).diff(lastCompleted * 1000) <= grouperMs;
+        if(isRecentlyCompletedChain) var daysLeft = 0;
 
-        // partials templates
-        var $success = "<span class='indicator-good'>Good</span>";
+        if(!isRecentlyCompletedChain) {
+            var hasLogs = $habit.find(".log").length;
+            if(!hasLogs) { // can start now because no log
+                console.log("No logs. How many days due is exactly grouper because you can start now.");
+                var daysLeft = (parseInt(grouperSecs/86400)).toFixed(2);
+            } else if(hasLogs) { // some time possibly a few days ago starts the grouper, or today starts the grouper
+                console.log("Has logs but NOT a recently completed chain within this grouper time period. Find diff between left-most log aka first log against current time and divide as necessary to get to the last group. How much left from the last group is how much longer until current cycle is due.")
+                var $leftMostLog = $habit.find(".log").eq(0);
+                var firstLogUnixSecs = parseInt( $leftMostLog.attr("data-unix") ); // seconds
+                firstLogUnixMs = firstLogUnixSecs * 1000;
+
+                var diffMs = moment(unix_ms).diff(firstLogUnixMs); // difference between today and first log
+                var diffSecs = diffMs/1000;
+                var mixedFraction = diffSecs/grouperSecs;
+                var fractionalPart = mixedFraction % 1;
+                var remainingFractionPart = 1-fractionalPart;
+                // if(1<=remainingFractionPart<.95)
+                //     var daysLeft = 0;
+                // else
+                var daysLeft = ((remainingFractionPart * grouperSecs)/86400).toFixed(2);
+            }
+        } // old last completed chain
+
+        // partial templates
+        var $good = "<span class='indicator-good'>Good</span>";
         var $fail = $("<span class='indicator-wip'>WIP <span class='due-date'></span><span class='days-left-info active'></span>");
         $fail.on("click", (eventFromIndicator)=>{
             var $indicator = $(eventFromIndicator.target).closest(".habit");
-            debugger;
             $indicator.find(".days-left-info").toggleClass("active");
             $indicator.find(".due-date").toggleClass("active");
             eventFromIndicator.stopPropagation();
@@ -61,15 +62,24 @@ function paintIndicators() {
         }); // fail
 
         var daysLeftMs = daysLeft * 86400 * 1000;
-        var date = moment( unix_ms + daysLeftMs ).format("MM/DD/YY")
+        var date = moment( unix_ms + daysLeftMs ).format("MM/DD/YY");
         $fail.find(".due-date").text(`${date} due`);
-        $fail.find(".days-left-info").text(`${daysLeft} days left`);
+
+        var partialDays = Math.floor(daysLeft);
+        var partialHours = daysLeft%1;
+        if(partialDays > 0) partialDays = `${partialDays} days `;
+        else partialDays = "";
+        if(partialHours>0) partialHours = `${partialHours} hrs `;
+        else partialHours = "";
+        $fail.find(".days-left-info").text(`${partialDays}${partialHours}left`);
+
+        console.log("isRecentlyCompletedChain: ", isRecentlyCompletedChain);
+        console.log("daysLeft: ", daysLeft);
 
         // display
-        if(daysLeft===0) {
-            $result.html($success)
+        if(isRecentlyCompletedChain || daysLeft===0) {
+            $result.html($good)
         } else {
-            debugger;
             $result.html($fail);
         }
     });

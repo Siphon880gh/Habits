@@ -58,7 +58,10 @@ function paintChains() {
         // init
         var $logContainer = $(logContainer);
         var $logs = $logContainers.find(".log");
-
+        $logs.find(".chain-icon.active").css("color", "black").removeClass("active");
+        $logs.removeClass("color0 color1 color2 color3 color4");
+        // debugger;
+        
         // validate
         if($logs.length==0) return true;
 
@@ -83,11 +86,14 @@ function paintChains() {
                 // time current vs time next
                 var tnext = $next.attr("data-unix");
                 tnext = parseInt(tnext);
-                var diffSeconds = moment(tnext, "unix").diff(tcurrent);
+                var diffSeconds = moment(tnext*1000).diff(tcurrent*1000)/1000;
+                // debugger;
 
                 // AcceptableSeconds is the acceptable seconds that the user set for a chain icon to appear.
                 // Compare with diffSeconds. If less than, show the chain icon. Otherwise, hide the chain icon.
-                $current.find(".chain-icon").toggleClass("active", diffSeconds < acceptableSeconds);
+                var isMetParamsForChainIcon = diffSeconds < acceptableSeconds;
+                $current.find(".chain-icon").toggleClass("active", isMetParamsForChainIcon);
+                if(isMetParamsForChainIcon) console.log("Drawn outline of chain icon");
             }; // if there is a next log
 
             // Group logs by color: Non-first logs
@@ -149,6 +155,7 @@ function paintChains() {
                 case 3: $current.addClass("color3"); break;
                 case 4: $current.addClass("color4"); break;
             } // switch
+            console.log("Colored a log");
 
         } // next log exist
     }); 
@@ -158,30 +165,46 @@ function paintChains() {
     var $activeChains = $(".chain-icon.active").toArray();
     var goalConsecutiveChains = $(".msgs-container-goal .mts-msg.active").text();
     goalConsecutiveChains = parseInt(goalConsecutiveChains);
-    console.log("goalConsecutiveChains" + goalConsecutiveChains + "<< Expect 1-8");
+    console.log("goalConsecutiveChains " + goalConsecutiveChains + "<< Expect 1-8");
     if(isNaN(goalConsecutiveChains)) { 
         console.error("Error goalConsecutiveChains is not an integer."); 
         return false; 
     };
+
+    // var prevChainVisited = false;
     for(var i = $activeChains.length-1; i>=0; i--) { // Right to left
         var $chain = $( $activeChains[i] );
         // if($chain.data("visited")) continue; // temp flag
 
-        var $prevActiveChain = $chain.closest(".log").prev(".log").find(".chain-icon.active");
-        var hasPrevActiveChain = $prevActiveChain.length;
-        if(hasPrevActiveChain) {
+        if(goalConsecutiveChains===1) {
+            var $onlyChain = $chain;
+            var $onlyChainLog = $onlyChain.closest(".log");
+            var color = $onlyChainLog.css("border-top-color"); 
+            setLastCompletedChain($onlyChain);
+            $onlyChain.css("color", color);
+
+            console.log("setLastCompletedChain when active chains is 1");
+            $queueChains = new Array();
+            continue;
+        }
+
+        var $l_ActiveChain = $chain.closest(".log").prev(".log").find(".chain-icon.active");
+        var $r_ActiveChain = $chain.closest(".log").next(".log").find(".chain-icon.active");
+        if($l_ActiveChain.length) {
             $queueChains.push($chain);
-        } else {
+        } else if($r_ActiveChain.length) {
+            $queueChains.push($chain);
             // debugger;
-            if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
-                var $onlyChain = $chain;
-                var $onlyChainLog = $onlyChain.closest(".log");
-                var color = $onlyChainLog.css("border-top-color"); 
-                setLastCompletedChain($onlyChain);
-                console.log("setLastCompletedChain 1");
-                $onlyChain.css("color", color);
-            } else if($activeChains.length!==1 && $queueChains.length>=goalConsecutiveChains-1) {
-                $queueChains.push($chain); // on the left most active chain icon
+            // if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
+            //     var $onlyChain = $chain;
+            //     var $onlyChainLog = $onlyChain.closest(".log");
+            //     var color = $onlyChainLog.css("border-top-color"); 
+            //     setLastCompletedChain($onlyChain);
+            //     $onlyChain.css("color", color);
+            //     console.log("setLastCompletedChain when active chains is1");
+            // if($activeChains.length!==1 && $queueChains.length>=goalConsecutiveChains) {
+            if($queueChains.length>=goalConsecutiveChains) {
+                // $queueChains.push($chain); // on the left most active chain icon
                 var $leftMostChain = $chain;
                 var $leftMostChainLog = $leftMostChain.closest(".log");
                 var color = $leftMostChainLog.css("border-top-color"); // color of the consecutive chain icons will be in the color of the group of the left-most chain which started the consecutive chain
@@ -189,10 +212,10 @@ function paintChains() {
                     let $queueChain = $queueChains[j];
                     // if(queueChain.data("visited")) continue; // temp flag
                     setLastCompletedChain($queueChain);
-                    console.log("setLastCompletedChain 2");
+                    console.log("setLastCompletedChain when active chains >1");
                     $queueChain.css("color", color);
                     // $queueChain.data("visited", 1); // temp flag
-                    console.log("Changed chain icon color");
+                    console.log("Colored chain icon");
                 } // for
             } // if there are consecutive chains and we are at the end of it, color the consecutive chain per the group color
 

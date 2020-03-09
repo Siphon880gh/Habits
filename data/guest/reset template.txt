@@ -1,9 +1,16 @@
 <div class="category">
-        <header><span class="title">Test</span></header>
-        <div class="list-habits"><div class="habit">
-        <header><span class="title">test</span></header>
-        <nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <header><span class="title">Z</span></header>
+        <div class="list-habits"><div class="habit" data-last-completed-chain="0">
+        <nav class="nav-habit edit-mode-component"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
+        <header>
+            <span class="title">z</span>
+            <div class="indicator-current-group-completed">
+    <label>Current cycle:&nbsp;</label>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/15/20 due</span><span class="days-left-info active">7.00 days left</span></span></span>
+</div>        </header>
 
+        <nav>
             <!-- Grouper aka group together logs -->
             <div class="msgs-container msgs-container-grouper">
                 <span class="msgs-label">Group logs by color: </span>
@@ -42,6 +49,7 @@
                     <span class="mts-msg">8</span>
                 </span>
             </div>
+
         </nav>
         <div class="logs">
             <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
