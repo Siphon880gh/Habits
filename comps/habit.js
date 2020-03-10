@@ -1,3 +1,7 @@
+$(".habit").livequery( (i,el)=>{
+    $(".list-habits").sortable({handle:".handle-habit", opacity: 0.5}).disableSelection();
+})
+
 $(".habit .msgs-container-grouper .msgs").livequery( (i, el)=>{
     initMultiTextStates(el);
 

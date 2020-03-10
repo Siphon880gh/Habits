@@ -1,29 +1,29 @@
 
             
             
-            <div class="category">
+            <div class="category" style="position: relative; opacity: 1; left: 0px; top: 0px;">
         <nav class="nav-category edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
-            <div class="handle fa fa-arrows-alt clickable"></div><br>
+            <div class="handle-category fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
         </nav>
         <header>
-            <span class="title" contenteditable="true" onblur="save();">Lifestyle</span>
+            <span class="title" contenteditable="true" onblur="save();">Z</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
-        <div class="list-habits"><div class="habit" data-last-completed-chain="0">
+        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
-            <div class="handle fa fa-arrows-alt clickable"></div><br>
+            <div class="handle-habit fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
-            <span class="title" contenteditable="true" onblur="save();">Drink 8 cups water</span>
+            <span class="title" contenteditable="true" onblur="save();">x</span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP <span class="due-date">04/06/20 due</span><span class="days-left-info active">28 days left</span></span></span>
-</div>            <div class="notes" contenteditable="true" onblur="save();">Can't expect will drink 8 cups a water everyday, so Im gonna have some leniency</div>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+</div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <nav>
@@ -31,8 +31,8 @@
             <div class="msgs-container msgs-container-grouper collapsable">
                 <span class="msgs-label">Group logs by color: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg" data-seconds="604800">Weekly</span>
-                    <span class="mts-msg active" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
                     <span class="mts-msg" data-seconds="1209600">2-weekly</span>
                     <span class="mts-msg" data-seconds="1814400">3-weekly</span>
                     <span class="mts-msg" data-seconds="86400">24h</span>
@@ -45,8 +45,8 @@
             <div class="msgs-container msgs-container-chainer collapsable">
                 <span class="msgs-label">Chain logs when between: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg" data-seconds="86400">24h</span>
-                    <span class="mts-msg active" data-seconds="172800">48h</span>
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
                     <span class="mts-msg" data-seconds="259200">72h</span>
                 </span>
             </div>
@@ -69,18 +69,18 @@
         </nav>
         <div class="logs collapsable">
             <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
-    </div><div class="habit" data-last-completed-chain="1583814360">
+    </div><div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
-            <div class="handle fa fa-arrows-alt clickable"></div><br>
+            <div class="handle-habit fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
-            <span class="title" contenteditable="true" onblur="save();">Gym</span>
+            <span class="title" contenteditable="true" onblur="save();">y</span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-good">Good</span></span>
-</div>            <div class="notes" contenteditable="true" onblur="save();">3 times a week.</div>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+</div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <nav>
@@ -102,9 +102,9 @@
             <div class="msgs-container msgs-container-chainer collapsable">
                 <span class="msgs-label">Chain logs when between: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg" data-seconds="86400">24h</span>
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
                     <span class="mts-msg" data-seconds="172800">48h</span>
-                    <span class="mts-msg active" data-seconds="259200">72h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
                 </span>
             </div>
 
@@ -112,9 +112,9 @@
             <div class="msgs-container msgs-container-goal collapsable">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg">1</span>
+                    <span class="mts-msg active">1</span>
                     <span class="mts-msg">2</span>
-                    <span class="mts-msg active">3</span>
+                    <span class="mts-msg">3</span>
                     <span class="mts-msg">4</span>
                     <span class="mts-msg">5</span>
                     <span class="mts-msg">6</span>
@@ -125,15 +125,133 @@
 
         </nav>
         <div class="logs collapsable">
-            <div class="log clickable color0" data-unix="1583814360">
-        &nbsp;
-        <span class="date">03/09/20 21:26</span>
-        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"></span>
-    </div><div class="log clickable color0" data-unix="1583814362">
-        &nbsp;
-        <span class="date">03/09/20 21:26</span>
-        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
-    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+    </div></div>
+    </div><div class="category">
+        <nav class="nav-category edit-mode-component active">
+            <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
+            <div class="handle-category fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
+        </nav>
+        <header>
+            <div class="title" contenteditable="true" onblur="save();">Z2</div>
+            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
+        </header>
+
+        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="0" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+        <nav class="nav-habit edit-mode-component active">
+            <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
+            <div class="handle-habit fa fa-arrows-alt clickable"></div><br>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
+        </nav>
+        <header>
+            <span class="title" contenteditable="true" onblur="save();">x3</span>
+            <div class="indicator-current-group-completed">
+    <label>Current cycle:&nbsp;</label>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+</div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
+        </header>
+
+        <nav>
+            <!-- Grouper aka group together logs -->
+            <div class="msgs-container msgs-container-grouper collapsable">
+                <span class="msgs-label">Group logs by color: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="1209600">2-weekly</span>
+                    <span class="mts-msg" data-seconds="1814400">3-weekly</span>
+                    <span class="mts-msg" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Chainer creates chain icons -->
+            <div class="msgs-container msgs-container-chainer collapsable">
+                <span class="msgs-label">Chain logs when between: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Goal is how many chains in a group -->
+            <div class="msgs-container msgs-container-goal collapsable">
+                <span class="msgs-label">Desired consecutive chains in a group: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active">1</span>
+                    <span class="mts-msg">2</span>
+                    <span class="mts-msg">3</span>
+                    <span class="mts-msg">4</span>
+                    <span class="mts-msg">5</span>
+                    <span class="mts-msg">6</span>
+                    <span class="mts-msg">7</span>
+                    <span class="mts-msg">8</span>
+                </span>
+            </div>
+
+        </nav>
+        <div class="logs collapsable">
+            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+    </div><div class="habit" data-last-completed-chain="0">
+        <nav class="nav-habit edit-mode-component active">
+            <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
+            <div class="handle-habit fa fa-arrows-alt clickable"></div><br>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
+        </nav>
+        <header>
+            <span class="title" contenteditable="true" onblur="save();">y2</span>
+            <div class="indicator-current-group-completed">
+    <label>Current cycle:&nbsp;</label>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+</div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
+        </header>
+
+        <nav>
+            <!-- Grouper aka group together logs -->
+            <div class="msgs-container msgs-container-grouper collapsable">
+                <span class="msgs-label">Group logs by color: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="1209600">2-weekly</span>
+                    <span class="mts-msg" data-seconds="1814400">3-weekly</span>
+                    <span class="mts-msg" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Chainer creates chain icons -->
+            <div class="msgs-container msgs-container-chainer collapsable">
+                <span class="msgs-label">Chain logs when between: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Goal is how many chains in a group -->
+            <div class="msgs-container msgs-container-goal collapsable">
+                <span class="msgs-label">Desired consecutive chains in a group: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active">1</span>
+                    <span class="mts-msg">2</span>
+                    <span class="mts-msg">3</span>
+                    <span class="mts-msg">4</span>
+                    <span class="mts-msg">5</span>
+                    <span class="mts-msg">6</span>
+                    <span class="mts-msg">7</span>
+                    <span class="mts-msg">8</span>
+                </span>
+            </div>
+
+        </nav>
+        <div class="logs collapsable">
+            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
                                                             

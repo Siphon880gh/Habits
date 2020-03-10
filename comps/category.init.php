@@ -18,7 +18,7 @@
     <div class="category">
         <nav class="nav-category edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br/>
-            <div class="fa fa-arrows-alt clickable"></div><br/>
+            <div class="handle-category fa fa-arrows-alt clickable"></div><br/>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
         </nav>
         <header>

@@ -1,3 +1,7 @@
+$(".category").livequery( (i,el)=>{
+    $(".list-categories").sortable({handle:".handle-category", opacity: 0.5}).disableSelection();
+})
+
 function closeCategory(btnInstance) {
     var $btn = $(btnInstance);
     var $category = $btn.closest(".category");

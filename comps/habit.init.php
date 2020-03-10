@@ -32,7 +32,7 @@
     <div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br/>
-            <div class="fa fa-arrows-alt clickable"></div><br/>
+            <div class="handle-habit fa fa-arrows-alt clickable"></div><br/>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
