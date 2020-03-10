@@ -1,4 +1,4 @@
-<?php if(isset($comps_log)) return; ?>
+<!-- Log -->
 
 <style>
     .color0 {
@@ -40,7 +40,7 @@
         visibility: hidden;
         position: absolute;
         top: 10px;
-        right: -13.5px;
+        right: -15.5px;
         font-size: 10px;
     }
     .log .chain-icon.active {
@@ -74,5 +74,3 @@
 
 
 <script src="comps/log.js"></script>
-
-<?php $comps_log=1; ?>

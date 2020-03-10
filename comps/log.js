@@ -58,7 +58,7 @@ function paintChains() {
         // init
         var $logContainer = $(logContainer);
         var $logs = $logContainers.find(".log");
-        $logs.find(".chain-icon.active").css("color", "black").removeClass("active");
+        $logs.find(".chain-icon").css("color", "black").removeClass("active").text("");
         $logs.removeClass("color0 color1 color2 color3 color4");
         // debugger;
         
@@ -192,8 +192,10 @@ function paintChains() {
         var $r_ActiveChain = $chain.closest(".log").next(".log").find(".chain-icon.active");
         if($l_ActiveChain.length) {
             $queueChains.push($chain);
+            $chain.html(`<br/>${i+1}`);
         } else if($r_ActiveChain.length) {
             $queueChains.push($chain);
+            $chain.html(`<br/>${i+1}`);
             // debugger;
             // if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
             //     var $onlyChain = $chain;

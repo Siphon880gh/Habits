@@ -1,3 +1,5 @@
+<!-- Indicator -->
+
 <style>
 .indicator-current-group-completed {
     float: right;

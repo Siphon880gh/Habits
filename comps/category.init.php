@@ -1,4 +1,4 @@
-<?php if(isset($comps_category)) return; ?>
+<!-- Category -->
 
 <style>
 .category {
@@ -21,5 +21,3 @@
 </template>
 
 <script src="comps/category.js"></script>
-
-<?php $comps_category=1; ?>

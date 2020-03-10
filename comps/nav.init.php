@@ -1,4 +1,4 @@
-<?php if(isset($comps_nav)) return; ?>
+<!-- Nav -->
 
 <style>
 #nav-main {
@@ -50,5 +50,3 @@
 </template>
 
 <script src="comps/nav.js"></script>
-
-<?php $comps_nav=1; ?>

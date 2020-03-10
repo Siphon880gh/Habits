@@ -1,4 +1,4 @@
-<?php if(isset($comps_habit)) return; ?>
+<!-- Habit -->
 
 <style>
 .habit nav .msgs .msg.active {
@@ -73,6 +73,3 @@
 </template>
 
 <script src="comps/habit.js"></script>
-
-
-<?php $comps_habit=1; ?>
