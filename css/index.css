@@ -63,3 +63,9 @@
 .text-red {
   color: red;
 }
+
+/* line 45, scss/index.scss */
+.collapsed {
+  height: 0;
+  overflow-y: hidden;
+}

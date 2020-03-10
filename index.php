@@ -22,7 +22,11 @@ session_start();
     <script src="../../offline/assets/handlebars.js" data-old="../../offline/assets/handlebars.js" data-old="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="../../offline/assets/jquery.livequery.js" data-old="../../offline/assets/jquery.livequery.js" data-old="https://raw.githack.com/hazzik/livequery/master/src/jquery.livequery.js"></script>
     <script src="../../offline/assets/moment.min.js" data-old="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
     <script src="vendors/multi-text-states.js"></script>
     <link href="vendors/multi-text-states.css" rel="stylesheet">
 
@@ -40,7 +44,7 @@ session_start();
 </head>
     <body>
         <div class="container">
-            <div id="title">Build Habits (Prototype; Not Designed)</div>
+            <div id="title">Build Habits</div>
             <?php include("comps/nav.php"); ?>
 
             <?php

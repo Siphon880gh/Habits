@@ -33,7 +33,7 @@
         <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br/>
             <div class="fa fa-arrows-alt clickable"></div><br/>
-            <div class="fa fa-minus clickable"></div>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">${Habit Untitled}$</span>
@@ -43,7 +43,7 @@
 
         <nav>
             <!-- Grouper aka group together logs -->
-            <div class="msgs-container msgs-container-grouper">
+            <div class="msgs-container msgs-container-grouper collapsable">
                 <span class="msgs-label">Group logs by color: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active" data-seconds="604800">Weekly</span>
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Chainer creates chain icons -->
-            <div class="msgs-container msgs-container-chainer">
+            <div class="msgs-container msgs-container-chainer collapsable">
                 <span class="msgs-label">Chain logs when between: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active" data-seconds="86400">24h</span>
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Goal is how many chains in a group -->
-            <div class="msgs-container msgs-container-goal">
+            <div class="msgs-container msgs-container-goal collapsable">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active">1</span>
@@ -82,7 +82,7 @@
             </div>
 
         </nav>
-        <div class="logs">
+        <div class="logs collapsable">
             <?php include("comps/log.php"); ?>
         </div>
     </div>

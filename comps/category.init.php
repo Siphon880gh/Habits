@@ -16,7 +16,11 @@
 
 <template id="template-category">
     <div class="category">
-        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component">
+            <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br/>
+            <div class="fa fa-arrows-alt clickable"></div><br/>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
+        </nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">${Category Untitled}$</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>

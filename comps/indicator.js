@@ -31,7 +31,7 @@ function paintIndicators() {
             var hasLogs = $habit.find(".log").length;
             if(!hasLogs) { // can start now because no log
                 console.log("No logs. How many days due is exactly grouper because you can start now.");
-                var daysLeft = (parseInt(grouperSecs/86400)).toFixed(2);
+                var daysLeft = (parseInt(grouperSecs/86400)).toFixed(0);
             } else if(hasLogs) { // some time possibly a few days ago starts the grouper, or today starts the grouper
                 console.log("Has logs but NOT a recently completed chain within this grouper time period. Find diff between left-most log aka first log against current time and divide as necessary to get to the last group. How much left from the last group is how much longer until current cycle is due.")
                 var $leftMostLog = $habit.find(".log").eq(0);
@@ -51,7 +51,7 @@ function paintIndicators() {
         } // old last completed chain
 
         // partial templates
-        var $good = "<span class='indicator-good'>Good</span>";
+        var $good = $("<span class='indicator-good'>Good</span>");
         var $fail = $("<span class='indicator-wip'>WIP <span class='due-date'></span><span class='days-left-info active'></span>");
         $fail.on("click", (eventFromIndicator)=>{
             var $indicator = $(eventFromIndicator.target).closest(".habit");
@@ -65,13 +65,19 @@ function paintIndicators() {
         var date = moment( unix_ms + daysLeftMs ).format("MM/DD/YY");
         $fail.find(".due-date").text(`${date} due`);
 
-        var partialDays = Math.floor(daysLeft);
-        var partialHours = daysLeft%1;
-        if(partialDays > 0) partialDays = `${partialDays} days `;
-        else partialDays = "";
-        if(partialHours>0) partialHours = `${partialHours} hrs `;
-        else partialHours = "";
-        $fail.find(".days-left-info").text(`${partialDays}${partialHours}left`);
+        if(!isRecentlyCompletedChain) {
+            if(!hasLogs) {
+                $fail.find(".days-left-info").text(`${daysLeft} days left`);
+            } else if(hasLogs) {
+                var partialDays = Math.floor(daysLeft);
+                var partialHours = daysLeft%1;
+                if(partialDays > 0) partialDays = `${partialDays.toFixed(0)} days `;
+                else partialDays = "";
+                if(partialHours>0) partialHours = `${partialHours.toFixed(2)} hrs `;
+                else partialHours = "";
+                $fail.find(".days-left-info").text(`${partialDays}${partialHours}left`);
+            }
+        } // preparing display
 
         console.log("isRecentlyCompletedChain: ", isRecentlyCompletedChain);
         console.log("daysLeft: ", daysLeft);
