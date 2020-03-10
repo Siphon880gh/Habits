@@ -1,9 +1,10 @@
 
             
+            
             <div class="category">
         <nav class="nav-category edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
-            <div class="fa fa-arrows-alt clickable"></div><br>
+            <div class="handle fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
         </nav>
         <header>
@@ -14,7 +15,7 @@
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
-            <div class="fa fa-arrows-alt clickable"></div><br>
+            <div class="handle fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
@@ -71,7 +72,7 @@
     </div><div class="habit" data-last-completed-chain="1583814360">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
-            <div class="fa fa-arrows-alt clickable"></div><br>
+            <div class="handle fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
@@ -135,4 +136,4 @@
     </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
-                                                
+                                                            
