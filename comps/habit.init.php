@@ -36,7 +36,7 @@
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
         </nav>
         <header>
-            <span class="title" contenteditable="true" onblur="save();">${Habit Untitled}$</span>
+            <span class="title" onblur="save();">${Habit Untitled}$</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
             <?php include("comps/indicator.php"); ?>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>

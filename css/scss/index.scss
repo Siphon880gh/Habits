@@ -1,9 +1,12 @@
 .title {
     font-weight: bold;
-    cursor: alias;
     max-width: 50vw;
     z-index: 1;
-}    
+}
+.title-rename {
+    margin-left: 1ch;
+    cursor: alias;
+}
 #title {
     font-size: 32px;
 }

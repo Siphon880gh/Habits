@@ -22,7 +22,7 @@
             <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
         </nav>
         <header>
-            <span class="title" contenteditable="true" onblur="save();">${Category Untitled}$</span>
+            <span class="title" onblur="save();">${Category Untitled}$</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 

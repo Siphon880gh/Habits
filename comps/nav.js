@@ -11,7 +11,7 @@ function toggleEditMode(btn) {
 
 function creatingNewCategory() {
     var what = prompt("What is the new category called?");
-    if(what.length && what!==null && typeof what!=="undefined") {
+    if(what!==null && what.length && typeof what!=="undefined") {
         // Init
         var atTop = confirm("Insert at the top?");
         var $dest = $(".list-categories");
@@ -81,7 +81,7 @@ $(document).on("show.bs.modal", "#modal-add", ()=> {
         if(isUserWantsNewCategory) {
             creatingNewCategory();
         } else {
-            creatingNewHabit(option.value, i-2); // dropdown "", "Create new category", "Category 1", "Category 2" // so [0, 1, 2, 3...] // so i-2
+            creatingNewHabit(option.text, i-2); // dropdown "", "Create new category", "Category 1", "Category 2" // so [0, 1, 2, 3...] // so i-2
         }
         $("#modal-add").modal("hide");
     })

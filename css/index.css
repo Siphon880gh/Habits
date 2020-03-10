@@ -1,17 +1,22 @@
 /* line 1, scss/index.scss */
 .title {
   font-weight: bold;
-  cursor: alias;
   max-width: 50vw;
   z-index: 1;
 }
 
-/* line 7, scss/index.scss */
+/* line 6, scss/index.scss */
+.title-rename {
+  margin-left: 1ch;
+  cursor: alias;
+}
+
+/* line 10, scss/index.scss */
 #title {
   font-size: 32px;
 }
 
-/* line 16, scss/index.scss */
+/* line 19, scss/index.scss */
 .category {
   border: 1px solid;
   padding: 10px;
@@ -19,7 +24,7 @@
   margin: 10px;
 }
 
-/* line 19, scss/index.scss */
+/* line 22, scss/index.scss */
 .habit {
   border: 1px solid;
   padding: 10px;
@@ -28,43 +33,43 @@
   margin: 5px;
 }
 
-/* line 23, scss/index.scss */
+/* line 26, scss/index.scss */
 .node {
   margin: 2.5px;
 }
 
-/* line 26, scss/index.scss */
+/* line 29, scss/index.scss */
 .node .fa-link {
   display: none;
 }
 
-/* line 29, scss/index.scss */
+/* line 32, scss/index.scss */
 .node .fa-link.active {
   display: inline;
 }
 
 /* Reuseable */
-/* line 33, scss/index.scss */
+/* line 36, scss/index.scss */
 .clickable {
   cursor: pointer;
 }
 
-/* line 36, scss/index.scss */
+/* line 39, scss/index.scss */
 .clickable:hover {
   color: red;
 }
 
-/* line 39, scss/index.scss */
+/* line 42, scss/index.scss */
 .edit-mode-component:not(.active) {
   display: none;
 }
 
-/* line 42, scss/index.scss */
+/* line 45, scss/index.scss */
 .text-red {
   color: red;
 }
 
-/* line 45, scss/index.scss */
+/* line 48, scss/index.scss */
 .collapsed {
   height: 0;
   overflow-y: hidden;
