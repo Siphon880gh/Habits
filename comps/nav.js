@@ -1,3 +1,14 @@
+function toggleEditMode(btn) {
+    var isEditMode = $(".edit-mode-component").first().hasClass("active"); 
+    if(isEditMode) {
+        $(".edit-mode-component").removeClass("active");
+        $(btn).removeClass("text-red");
+    } else {
+        $(".edit-mode-component").addClass("active");
+        $(btn).addClass("text-red");
+    }
+} // toggleEditMode
+
 function creatingNewCategory() {
     var what = prompt("What is the new category called?");
     if(what.length && what!==null && typeof what!=="undefined") {
