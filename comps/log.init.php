@@ -40,7 +40,7 @@
         visibility: hidden;
         position: absolute;
         top: 10px;
-        right: -15.5px;
+        right: -13.5px;
         font-size: 10px;
     }
     .log .chain-icon.active {

@@ -32,6 +32,8 @@ function closeHabit(btnInstance) {
     var $btn = $(btnInstance);
     var $habit = $btn.closest(".habit");
     var title = $habit.find(".title").text();
-    if(confirm(`Close this habit ${title}?`));
+    if(confirm(`Close this habit ${title}?`)) {
         $habit.remove();
+        setTimeout(save, 100);
+    }
 }

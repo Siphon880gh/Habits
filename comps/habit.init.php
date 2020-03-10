@@ -10,19 +10,35 @@
 .habit {
     position: relative;
 }
+.habit .notes {
+    color: darkgray;
+}
 .nav-habit {
     position: absolute;
     top: 0;
     right: 5px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    padding-left: 3px;
+    border-bottom-width: 1px;
+    border-bottom-color: darkgray;
+    border-bottom-style: solid;
 }
 </style>
 
 <template id="template-habit">
     <div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
+        <nav class="nav-habit edit-mode-component">
+            <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br/>
+            <div class="fa fa-arrows-alt clickable"></div><br/>
+            <div class="fa fa-minus clickable"></div>
+        </nav>
         <header>
-            <span class="title">${Habit Untitled}$</span>
+            <span class="title" contenteditable="true" onblur="save();">${Habit Untitled}$</span>
             <?php include("comps/indicator.php"); ?>
+            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <nav>

@@ -1,13 +1,13 @@
 <div class="category">
         <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
-        <header><span class="title">Z</span></header>
+        <header><span class="title" contenteditable="true" onblur="save();">Category</span></header>
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
         <header>
-            <span class="title">z</span>
+            <span class="title" contenteditable="true" onblur="save();">Habit</span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/15/20 due</span><span class="days-left-info active">7.00 days left</span></span></span>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
 </div>        </header>
 
         <nav>

@@ -65,7 +65,7 @@ session_start();
             </main>
 
             <div style="margin-top:20px;">
-                    <div>To rearrange visually</div>
+                    <div>Manage Account:</div>
                     <div>
                         <a href="?guest">Guest</a>
                         <span>&nbsp;</span>

@@ -4,6 +4,7 @@
 .indicator-current-group-completed {
     float: right;
     padding-top: 5px;
+    padding-right: 14.5px;
 }
 .indicator-good {
     color: green;
