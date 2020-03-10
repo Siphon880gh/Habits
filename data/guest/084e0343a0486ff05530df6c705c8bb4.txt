@@ -1,13 +1,17 @@
 
+            
+            
+            
+            
             <div class="category">
-        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z6</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component active">
+        <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="fa fa-arrows-alt clickable"></div><br>
             <div class="fa fa-minus clickable"></div>
@@ -16,7 +20,7 @@
             <span class="title" contenteditable="true" onblur="save();">z6</span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+    <span class="result"><span class="indicator-wip">WIP <span class="due-date">04/06/20 due</span><span class="days-left-info active">28 days left</span></span></span>
 </div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
@@ -25,8 +29,8 @@
             <div class="msgs-container msgs-container-grouper">
                 <span class="msgs-label">Group logs by color: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
-                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg active" data-seconds="2419200">Monthly</span>
                     <span class="mts-msg" data-seconds="1209600">2-weekly</span>
                     <span class="mts-msg" data-seconds="1814400">3-weekly</span>
                     <span class="mts-msg" data-seconds="86400">24h</span>
@@ -49,31 +53,55 @@
             <div class="msgs-container msgs-container-goal">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg active">1</span>
+                    <span class="mts-msg">1</span>
                     <span class="mts-msg">2</span>
                     <span class="mts-msg">3</span>
                     <span class="mts-msg">4</span>
                     <span class="mts-msg">5</span>
                     <span class="mts-msg">6</span>
-                    <span class="mts-msg">7</span>
+                    <span class="mts-msg active">7</span>
                     <span class="mts-msg">8</span>
                 </span>
             </div>
 
         </nav>
         <div class="logs">
-            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+            <div class="log clickable color0" data-unix="1583811928">
+        &nbsp;
+        <span class="date">03/09/20 20:45</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"><br>1</span>
+    </div><div class="log clickable color0" data-unix="1583811929">
+        &nbsp;
+        <span class="date">03/09/20 20:45</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"><br>2</span>
+    </div><div class="log clickable color0" data-unix="1583811954">
+        &nbsp;
+        <span class="date">03/09/20 20:45</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"><br>3</span>
+    </div><div class="log clickable color0" data-unix="1583811955">
+        &nbsp;
+        <span class="date">03/09/20 20:45</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"><br>4</span>
+    </div><div class="log clickable color0" data-unix="1583811996">
+        &nbsp;
+        <span class="date">03/09/20 20:46</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"><br>5</span>
+    </div><div class="log clickable color0" data-unix="1583811998">
+        &nbsp;
+        <span class="date">03/09/20 20:46</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
             <div class="category">
-        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z5</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component active">
+        <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="fa fa-arrows-alt clickable"></div>
         </nav>
@@ -130,14 +158,14 @@
             <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div><div class="category">
-        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z4</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
-        <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component">
+        <div class="list-habits"><div class="habit" data-last-completed-chain="1583811892">
+        <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="fa fa-arrows-alt clickable"></div>
         </nav>
@@ -145,7 +173,7 @@
             <span class="title" contenteditable="true" onblur="save();">z4</span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP <span class="due-date">03/16/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+    <span class="result"><span class="indicator-good">Good</span></span>
 </div>            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
@@ -178,8 +206,8 @@
             <div class="msgs-container msgs-container-goal">
                 <span class="msgs-label">Desired consecutive chains in a group: </span>
                 <span class="msgs clickable">
-                    <span class="mts-msg active">1</span>
-                    <span class="mts-msg">2</span>
+                    <span class="mts-msg">1</span>
+                    <span class="mts-msg active">2</span>
                     <span class="mts-msg">3</span>
                     <span class="mts-msg">4</span>
                     <span class="mts-msg">5</span>
@@ -191,18 +219,42 @@
 
         </nav>
         <div class="logs">
-            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+            <div class="log clickable color0" data-unix="1583811820">
+        &nbsp;
+        <span class="date">03/09/20 20:43</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>1</span>
+    </div><div class="log clickable" data-unix="1583811821">
+        &nbsp;
+        <span class="date">03/09/20 20:43</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>2</span>
+    </div><div class="log clickable" data-unix="1583811891">
+        &nbsp;
+        <span class="date">03/09/20 20:44</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>3</span>
+    </div><div class="log clickable" data-unix="1583811891">
+        &nbsp;
+        <span class="date">03/09/20 20:44</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>4</span>
+    </div><div class="log clickable" data-unix="1583811892">
+        &nbsp;
+        <span class="date">03/09/20 20:44</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>5</span>
+    </div><div class="log clickable" data-unix="1583811894">
+        &nbsp;
+        <span class="date">03/09/20 20:44</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
             <div class="category">
-        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z3</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component active">
+        <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div>
         </nav>
@@ -260,14 +312,14 @@
     </div></div>
     </div>
             <div class="category">
-        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z2</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component active">
+        <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div>
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div>
         </nav>
@@ -325,15 +377,15 @@
     </div></div>
     </div>
             <div class="category">
-        <nav class="nav-category edit-mode-component active"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
+        <nav class="nav-category edit-mode-component"><span class="fa fa-close clickable" onclick="closeCategory(this);"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">Z</span>
             <div class="notes" contenteditable="true" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"><div class="habit" data-last-completed-chain="0">
-        <nav class="nav-habit edit-mode-component active"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
-        <nav class="nav-habit-2 edit-mode-component active"><span class="fa fa-drag clickable"></span></nav>
+        <nav class="nav-habit edit-mode-component"><span class="fa fa-close clickable" onclick="closeHabit(this);"></span></nav>
+        <nav class="nav-habit-2 edit-mode-component"><span class="fa fa-drag clickable"></span></nav>
         <header>
             <span class="title" contenteditable="true" onblur="save();">z</span>
             <div class="indicator-current-group-completed">
@@ -387,4 +439,4 @@
             <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
-                                                                                    
+                                                                                                                                    
