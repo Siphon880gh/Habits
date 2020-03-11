@@ -38,7 +38,7 @@
         <header>
             <span class="title" onblur="save();">${Habit Untitled}$</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
             <?php include("comps/indicator.php"); ?>
-            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
+            <div class="notes" onblur="save();">No notes</div>
         </header>
 
         <nav>

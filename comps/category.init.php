@@ -23,7 +23,7 @@
         </nav>
         <header>
             <span class="title" onblur="save();">${Category Untitled}$</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
-            <div class="notes" contenteditable="true" onblur="save();">No notes</div>
+            <div class="notes" onblur="save();">No notes</div>
         </header>
 
         <div class="list-habits"></div>
