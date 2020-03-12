@@ -26,7 +26,7 @@
         <h4 class="modal-title">Add category or habit</h4>
         <small>
         </p>
-        <p>You can add a new category of life or add a habit under a category. Eg. Category "Health" -> Habit "Exercising", "Health" -> "Drinking water".</p>
+        <p>You can add a new area of life or add a habit under an existing area. Eg. Area "Health" -> Habit "Exercising", "Health" -> "Drinking water".</p>
         </small>
         </div>
         <div class="modal-body">
@@ -43,7 +43,7 @@
 
 <template id="template-dropdown--adder">
     <option value=""></option>
-    <option value="new-category">< Create new category! ></option>
+    <option value="new-category">< Create new area of life! ></option>
     {{#each categories}}
         <option value="{{this.index}}">{{this}}</option>
     {{/each}}
