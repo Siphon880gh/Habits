@@ -3,6 +3,28 @@
 //     $(el).html( html );
 // });
 
+$(()=>{
+    (function windowOnloadFadeOldLogs() {
+
+        $(".log").each( (i,el)=> {
+            // debugger;
+            let now = 0;
+            if(isOverriddenDate()) {
+                now = getOverriddenDateValues().unix;
+            } else {
+                now = getTodayDateValues().unix;
+            }
+            let logDate = $(el).attr("data-unix");
+            logDate = parseInt(logDate);
+            let lastWeek = moment(now*1000).subtract(86400*1000*7).unix();
+            let lastWeekPlus7Days = moment(lastWeek*1000).add(86400*1000*7).unix();
+            if(logDate<lastWeek) {
+                $(el).addClass("faded");
+            }
+        }); // foreach
+    })();
+});
+
 $(".log").livequery( (i,el)=> {
     // console.log("aa");
     let now = 0;

@@ -65,7 +65,7 @@ session_start();
             ?>
             </main>
 
-            <div style="margin-top:20px;">
+            <div style="margin-top:40px;">
                     <div>Testing:</div>
                     <div>
                         <label for="override-date">Override today's date</label>
