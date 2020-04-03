@@ -36,6 +36,9 @@
         /* background-color: #ffbbbb; */
         opacity: .75;
     }
+    .log.faded {
+        opacity: .5;
+    }
     .log .chain-icon {
         visibility: hidden;
         position: absolute;

@@ -26,3 +26,11 @@ function renameTitleAndNotes(btn) {
 
     setTimeout(save, 100);
 } // renameTitle
+
+function getTodayDateValues() {
+    let now = moment.now();
+    return {
+        unix: moment(now).unix(),
+        humanReadable: moment(now).format("MM/DD/YY HH:mm:ss")
+    }
+}

@@ -4,6 +4,22 @@
 // });
 
 $(".log").livequery( (i,el)=> {
+    // console.log("aa");
+    let now = 0;
+    if(isOverriddenDate()) {
+        now = getOverriddenDateValues().unix;
+    } else {
+        now = getTodayDateValues().unix;
+    }
+    let logDate = $(el).attr("data-unix");
+    logDate = parseInt(logDate);
+    let lastWeek = moment(now*1000).subtract(86400*1000*7).unix();
+    let lastWeekPlus7Days = moment(lastWeek*1000).add(86400*1000*7).unix();
+    if(logDate<lastWeek) {
+        $(el).addClass("faded");
+    }
+    // debugger;
+
     $(el).on("click", (ev)=> {
         var $el = $(ev.target);
         if(!$el.hasClass("log")) $el = $el.closest(".log");
@@ -19,7 +35,7 @@ $(".log").livequery( (i,el)=> {
                 // $el.fadeOut(50, ()=> { $(this).remove(); }); // Do not fade because that just hides it
                 $el.remove();
                 
-                setTimeout(()=> { paintChains(); }, 100);
+                setTimeout(()=> { paintLogsAndChains(); }, 100);
                 setTimeout(()=> { paintIndicators(); }, 150);
                 setTimeout(()=> { save(); }, 200);
         } // want to remove
@@ -35,22 +51,27 @@ $(".add-log").livequery( (i,el)=> {
         var $log = $(html);
 
         // Time functions
-        var unix_ = moment().unix();
-        var humanReadable = moment.unix( unix_ ).format("MM/DD/YY HH:mm");
+        let unix = moment().unix();
+        let humanReadable = moment.unix( unix ).format("MM/DD/YY HH:mm:ss");
         // console.log(moment().diff(unix_a, unix_b));
 
-        $log.attr("data-unix", unix_);
+        if(isOverriddenDate()) {
+            unix = getOverriddenDateValues().unix;
+            humanReadable = getOverriddenDateValues().humanReadable;
+        }
+
+        $log.attr("data-unix", unix);
         $log.find(".date").text(humanReadable)
         $log.insertBefore($add);
 
-        setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintLogsAndChains(); }, 100);
         setTimeout(()=> { paintIndicators(); }, 150);
         setTimeout(()=> { save(); }, 200);
     })
 });
 
-function paintChains() {
-    console.log("f paintChains");
+function paintLogsAndChains() {
+    console.log("f paintLogsAndChains");
     var $logContainers = $(".logs");
 
     // At every habit's logs container
@@ -231,7 +252,7 @@ function paintChains() {
 
     setTimeout(save, 200);
 
-} // paintChains
+} // paintLogsAndChains
 
 function setLastCompletedChain($lastCompletedChain) {
     // components

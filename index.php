@@ -28,6 +28,7 @@ session_start();
 
     <link href="css/index.css?v=<?php echo time(); ?>" rel="stylesheet">
     <script src="js/app.js?v=<?php echo time(); ?>"></script>
+    <script src="js/test.js?v=<?php echo time(); ?>"></script>
 
     <?php
         include("comps/nav.init.php");
@@ -63,6 +64,15 @@ session_start();
                 } // user account
             ?>
             </main>
+
+            <div style="margin-top:20px;">
+                    <div>Testing:</div>
+                    <div>
+                        <label for="override-date">Override today's date</label>
+                            <input id="override-date" type="date">
+                        </label>
+                    </div>
+            </div>
 
             <div style="margin-top:20px;">
                     <div>Manage Account:</div>

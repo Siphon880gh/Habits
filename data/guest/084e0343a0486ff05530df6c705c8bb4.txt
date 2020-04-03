@@ -1,0 +1,121 @@
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="category">
+        <nav class="nav-category edit-mode-component">
+            <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
+            <div class="handle-category fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtCategory(this);"></div>
+        </nav>
+        <header>
+            <span class="title" onblur="save();">A</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
+            <div class="notes" onblur="save();">No notes</div>
+        </header>
+
+        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="1585897226">
+        <nav class="nav-habit edit-mode-component">
+            <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
+            <div class="handle-habit fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
+            <div class="fa fa-minus clickable" onclick="toggleCollapseAtHabit(this);"></div>
+        </nav>
+        <header>
+            <span class="title" onblur="save();">a</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
+            <div class="indicator-current-group-completed">
+    <label>Current cycle:&nbsp;</label>
+    <span class="result"><span class="indicator-good">Good</span></span>
+</div>            <div class="notes" onblur="save();">No notes</div>
+        </header>
+
+        <nav>
+            <!-- Grouper aka group together logs -->
+            <div class="msgs-container msgs-container-grouper collapsable">
+                <span class="msgs-label">Group logs by color: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="604800">Weekly</span>
+                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="1209600">2-weekly</span>
+                    <span class="mts-msg" data-seconds="1814400">3-weekly</span>
+                    <span class="mts-msg" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Chainer creates chain icons -->
+            <div class="msgs-container msgs-container-chainer collapsable">
+                <span class="msgs-label">Chain logs when between: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg active" data-seconds="86400">24h</span>
+                    <span class="mts-msg" data-seconds="172800">48h</span>
+                    <span class="mts-msg" data-seconds="259200">72h</span>
+                </span>
+            </div>
+
+            <!-- Goal is how many chains in a group -->
+            <div class="msgs-container msgs-container-goal collapsable">
+                <span class="msgs-label">Desired consecutive chains in a group: </span>
+                <span class="msgs clickable">
+                    <span class="mts-msg">1</span>
+                    <span class="mts-msg active">2</span>
+                    <span class="mts-msg">3</span>
+                    <span class="mts-msg">4</span>
+                    <span class="mts-msg">5</span>
+                    <span class="mts-msg">6</span>
+                    <span class="mts-msg">7</span>
+                    <span class="mts-msg">8</span>
+                </span>
+            </div>
+
+        </nav>
+        <div class="logs collapsable">
+            <div class="log clickable faded color0" data-unix="1580716809">
+        &nbsp;
+        <span class="date">02/03/20 00:00:09</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="log clickable faded color0" data-unix="1580716810">
+        &nbsp;
+        <span class="date">02/03/20 00:00:10</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="log clickable color0" data-unix="1585897214">
+        &nbsp;
+        <span class="date">04/03/20 00:00:14</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>2</span>
+    </div><div class="log clickable color0" data-unix="1585897220">
+        &nbsp;
+        <span class="date">04/03/20 00:00:20</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>3</span>
+    </div><div class="log clickable color0" data-unix="1585897222">
+        &nbsp;
+        <span class="date">04/03/20 00:00:22</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>4</span>
+    </div><div class="log clickable color0" data-unix="1585897223">
+        &nbsp;
+        <span class="date">04/03/20 00:00:23</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>5</span>
+    </div><div class="log clickable color0" data-unix="1585897224">
+        &nbsp;
+        <span class="date">04/03/20 00:00:24</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>6</span>
+    </div><div class="log clickable color0" data-unix="1585897226">
+        &nbsp;
+        <span class="date">04/03/20 00:00:26</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"><br>7</span>
+    </div><div class="log clickable color0" data-unix="1585897227">
+        &nbsp;
+        <span class="date">04/03/20 00:00:27</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+    </div></div>
+    </div>
+                                                                                                                                                                                                

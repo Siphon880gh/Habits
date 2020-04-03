@@ -6,7 +6,7 @@ $(".habit .msgs-container-grouper .msgs").livequery( (i, el)=>{
     initMultiTextStates(el);
 
     $(el).on("click", ()=> {
-        setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintLogsAndChains(); }, 100);
         setTimeout(()=> { paintIndicators(); }, 150);
         setTimeout(()=> { save(); }, 200);
     });
@@ -16,7 +16,7 @@ $(".habit .msgs-container-chainer .msgs").livequery( (i, el)=>{
     initMultiTextStates(el);
 
     $(el).on("click", ()=> {
-        setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintLogsAndChains(); }, 100);
         setTimeout(()=> { paintIndicators(); }, 150);
         setTimeout(()=> { save(); }, 200);
     });
@@ -26,7 +26,7 @@ $(".habit .msgs-container-goal .msgs").livequery( (i, el)=>{
     initMultiTextStates(el);
 
     $(el).on("click", ()=> {
-        setTimeout(()=> { paintChains(); }, 100);
+        setTimeout(()=> { paintLogsAndChains(); }, 100);
         setTimeout(()=> { paintIndicators(); }, 150);
         setTimeout(()=> { save(); }, 200);
     });
