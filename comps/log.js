@@ -182,6 +182,7 @@ function paintLogsAndChains() {
     }); 
 
     // Color chain icons that are consecutive at every habit's logs container
+    let countingConsecutiveChains = 1;
     $logContainers.each((i, logContainer)=>{ 
         var $queueChains = new Array();
         var $logContainer = $(logContainer);
@@ -215,10 +216,12 @@ function paintLogsAndChains() {
             var $r_ActiveChain = $chain.closest(".log").next(".log").find(".chain-icon.active");
             if($l_ActiveChain.length) {
                 $queueChains.push($chain);
-                $chain.html(`<br/>${i+1}`);
+                $chain.html(`<br/>${countingConsecutiveChains}`);
+                countingConsecutiveChains++;
             } else if($r_ActiveChain.length) {
                 $queueChains.push($chain);
-                $chain.html(`<br/>${i+1}`);
+                $chain.html(`<br/>${countingConsecutiveChains}`);
+                countingConsecutiveChains = 1;
                 // debugger;
                 // if(goalConsecutiveChains===1 && $activeChains.length===1 && $chain.hasClass("active")) {
                 //     var $onlyChain = $chain;
