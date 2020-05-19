@@ -1,10 +1,10 @@
 $(()=>{
-    let todaysDate = moment(moment.now()).format("YYYY-MM-DD");
-    $("#override-date").val(todaysDate);
+    // let todaysDate = moment(moment.now()).format("YYYY-MM-DD");
+    // $("#override-date").val(todaysDate);
 });
 
 function isOverriddenDate() {
-    return $("#override-date").length>0 && $("#override-date").val().length>0;
+    return $("#override-date").length>0 && $("#override-date").val().length>0; // mm/dd/yyyy is actually blank value
 }
 
 function getOverriddenDateValues() {

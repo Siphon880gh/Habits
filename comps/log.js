@@ -165,14 +165,14 @@ function paintLogsAndChains() {
         cycleNums.forEach( (cycleNum, i) => {
             cycleNums[i].color = (() => {
                 if(i===0) return "color0";
-                debugger;
+                // debugger;
                 var lastColor = cycleNums[i-1].color;
                 var lastCycleNum = cycleNums[i-1].num;
                 var currentCycleNum = cycleNums[i].$dom.attr("data-cycle-num");
                 
                 if(lastCycleNum!==currentCycleNum) {
                     var colorIndex = parseInt(lastColor[lastColor.length-1]);
-                    debugger;
+                    // debugger;
                     return `color${colorIndex+1}`; // new color group
                 } else {
                     return lastColor; // same color group

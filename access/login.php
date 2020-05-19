@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(isset($_POST["username"]) && isset($_POST["passw"]) ) {
-	$folder = $_POST["username"];
-	$filename_ = $_POST["passw"];
+if(isset($_GET["username"]) && isset($_GET["passw"]) ) {
+	$folder = $_GET["username"];
+	$filename_ = $_GET["passw"];
 	$filename = md5($filename_);
 	// die("data/$folder/$filename.txt");
 
@@ -27,7 +27,7 @@ if(isset($_POST["username"]) && isset($_POST["passw"]) ) {
         <h3>Enter your credentials</h3>
         <div class="login-form">
 
-            <form action="login.php" method="POST">
+            <form action="login.php" method="GET">
                 <input id="username" name="username" type="text"/><br>
                 <input id="passw" name="passw" type="password" style="margin-top:.25rem;"/><br/>
                 <input type="submit" value="Login"/>

@@ -1,4 +1,10 @@
 <?php
+if(isset($_GET["username"]) && isset($_GET["password"]) ) {
+    if(strlen($_GET["username"])>0 && strlen($_GET["password"])>0 ) {
+        header(sprintf("Location: access/login.php?username=%s&passw=%s", $_GET["username"], $_GET["password"]));
+    }
+}
+
 session_start();
 
 //     include("access/api-grant-guest.php");
@@ -42,14 +48,8 @@ session_start();
     <body>
         <div class="container">
             <div id="title">Build Habits</div>
+            <div id="app-desc"><?php echo date("m/d/y"); ?></div>
             <?php include("comps/nav.php"); ?>
-
-            <?php
-                // if(isset($_SESSION["filepath"])) {
-                //     var_dump("filepath: " . $_SESSION['filepath'] . " << Expect 5f4* for wff; Expect 084* if guest.");
-                //     var_dump("loggedIn:" . isset($_SESSION["loggedIn"]) . "<< Expect 1 for wff");
-                // }
-            ?>
 
             <main class="list-categories">
             <?php
