@@ -93,7 +93,7 @@ $(".add-log").livequery( (i,el)=> {
 });
 
 function paintLogsAndChains() {
-    console.log("f paintLogsAndChains");
+    // console.log("f paintLogsAndChains");
     var $logContainers = $(".logs");
 
     // At every habit's logs container
@@ -107,9 +107,9 @@ function paintLogsAndChains() {
         
         // validate
         if($logs.length==0) return true;
-
-        // At a habit's logs container's logs
+        
         $logs.each((j, log)=>{ 
+
             var $current = $(log);
             var tcurrent = $current.attr("data-unix");
             tcurrent = parseInt(tcurrent);
@@ -130,13 +130,13 @@ function paintLogsAndChains() {
                 var tnext = $next.attr("data-unix");
                 tnext = parseInt(tnext);
                 var diffSeconds = moment(tnext*1000).diff(tcurrent*1000)/1000;
-                // debugger;
+                // console.log("diffSeconds", diffSeconds);
 
                 // AcceptableSeconds is the acceptable seconds that the user set for a chain icon to appear.
                 // Compare with diffSeconds. If less than, show the chain icon. Otherwise, hide the chain icon.
                 var isMetParamsForChainIcon = diffSeconds < acceptableSeconds;
                 $current.find(".chain-icon").toggleClass("active", isMetParamsForChainIcon);
-                if(isMetParamsForChainIcon) console.log("Drawn outline of chain icon");
+                // if(isMetParamsForChainIcon) console.log("Drawn outline of chain icon");
             }; // if there is a next log
 
             // Group logs by color: Non-first logs
@@ -146,24 +146,45 @@ function paintLogsAndChains() {
 
             var grouper = $(".msgs-container-grouper .mts-msg.active").attr("data-seconds");
             grouper = parseInt(grouper);
-            var groupNum_ = Math.floor( (tcurrent-tfirst)/grouper );
-            var groupNum = groupNum_ % 4;
+            // console.log("tcurrent-tfirst: " + `${tcurrent}-${tfirst}`);
+            var cycleNum = Math.floor( (tcurrent-tfirst)/grouper );
+            // var groupNum = cycleNum % 4;
 
-            console.log(`node #${$current.index()} << Expected to increase over time from 0.`);
-            console.log(`groupNum: ${groupNum} << Expected to increase over time then circle back to zero.`);
-
+            $current.attr("data-cycle-num", cycleNum);
             $current.removeClass("color0 color1 color2 color3 color4"); // resets color
-            switch (groupNum) {
-                case 0: $current.addClass("color0"); break;
-                case 1: $current.addClass("color1"); break;
-                case 2: $current.addClass("color2"); break;
-                case 3: $current.addClass("color3"); break;
-                case 4: $current.addClass("color4"); break;
-            } // switch
 
-            // console.log($log);
-    
-        }); // logs
+        }); // logs of a logsContainer
+
+        var cycleNums = $logs.toArray().map( function(el,i) {
+            return {
+                $dom: $(el),
+                num: $(el).attr("data-cycle-num")
+            } // return
+        }); // cycleNums
+
+        cycleNums.forEach( (cycleNum, i) => {
+            cycleNums[i].color = (() => {
+                if(i===0) return "color0";
+                debugger;
+                var lastColor = cycleNums[i-1].color;
+                var lastCycleNum = cycleNums[i-1].num;
+                var currentCycleNum = cycleNums[i].$dom.attr("data-cycle-num");
+                
+                if(lastCycleNum!==currentCycleNum) {
+                    var colorIndex = parseInt(lastColor[lastColor.length-1]);
+                    debugger;
+                    return `color${colorIndex+1}`; // new color group
+                } else {
+                    return lastColor; // same color group
+                }
+            })( i );
+        });
+
+        cycleNums.forEach( cycleNum=> {
+            var colorClass = cycleNum.color;
+            var $dom = cycleNum.$dom;
+            $dom.addClass(colorClass);
+        });
 
     }); // logsContainer
 
@@ -191,6 +212,7 @@ function paintLogsAndChains() {
             // console.log(`groupNum: ${groupNum} << Expected to increase over time then circle back to zero.`);
             $current.removeClass("color0 color1 color2 color3 color4");
 
+            // Color left-most log
             switch (groupNum) {
                 case 0: $current.addClass("color0"); break;
                 case 1: $current.addClass("color1"); break;
@@ -198,7 +220,7 @@ function paintLogsAndChains() {
                 case 3: $current.addClass("color3"); break;
                 case 4: $current.addClass("color4"); break;
             } // switch
-            console.log("Colored a log");
+            // console.log("Colored a log");
 
         } // next log exist
     }); 
@@ -211,7 +233,7 @@ function paintLogsAndChains() {
         var $activeChains = $logContainer.find(".chain-icon.active").toArray();
         var goalConsecutiveChains = $logContainer.closest(".habit").find(".msgs-container-goal .mts-msg.active").text();
         goalConsecutiveChains = parseInt(goalConsecutiveChains);
-        console.log("goalConsecutiveChains " + goalConsecutiveChains + "<< Expect 1-8");
+        // console.log("goalConsecutiveChains " + goalConsecutiveChains + "<< Expect 1-8");
         if(isNaN(goalConsecutiveChains)) { 
             console.error("Error goalConsecutiveChains is not an integer."); 
             return false; 
@@ -229,7 +251,7 @@ function paintLogsAndChains() {
                 setLastCompletedChain($onlyChain);
                 $onlyChain.css("color", color);
 
-                console.log("setLastCompletedChain when active chains is 1");
+                // console.log("setLastCompletedChain when active chains is 1");
                 $queueChains = new Array();
                 continue;
             }
@@ -262,16 +284,16 @@ function paintLogsAndChains() {
                         let $queueChain = $queueChains[j];
                         // if(queueChain.data("visited")) continue; // temp flag
                         setLastCompletedChain($queueChain);
-                        console.log("setLastCompletedChain when active chains >1");
+                        // console.log("setLastCompletedChain when active chains >1");
                         $queueChain.css("color", color);
                         // $queueChain.data("visited", 1); // temp flag
-                        console.log("Colored chain icon");
+                        // console.log("Colored chain icon");
                     } // for
                 } // if there are consecutive chains and we are at the end of it, color the consecutive chain per the group color
 
                 $queueChains = new Array(); // reset
             }
-            console.log($queueChains);
+            // console.log($queueChains);
         } // for
     });
 
@@ -295,6 +317,6 @@ function setLastCompletedChain($lastCompletedChain) {
 
     if(lastCompletedChain_new > lastCompletedChain_old) {
         $habit.attr("data-last-completed-chain", lastCompletedChain_new);
-        console.log("proc changed last completed chain attribute at habit DOM");
+        // console.log("proc changed last completed chain attribute at habit DOM");
     }
 }

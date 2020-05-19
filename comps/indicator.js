@@ -79,8 +79,8 @@ function paintIndicators() {
             }
         } // preparing display
 
-        console.log("isRecentlyCompletedChain: ", isRecentlyCompletedChain);
-        console.log("daysLeft: ", daysLeft);
+        // console.log("isRecentlyCompletedChain: ", isRecentlyCompletedChain);
+        // console.log("daysLeft: ", daysLeft);
 
         // display
         if(isRecentlyCompletedChain || daysLeft===0) {

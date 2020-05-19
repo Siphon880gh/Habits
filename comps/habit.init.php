@@ -47,7 +47,7 @@
                 <span class="msgs-label">Group logs by color: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active" data-seconds="604800">Weekly</span>
-                    <span class="mts-msg" data-seconds="2419200">Monthly</span>
+                    <span class="mts-msg" data-seconds="2628000">Monthly</span>
                     <span class="mts-msg" data-seconds="1209600">2-weekly</span>
                     <span class="mts-msg" data-seconds="1814400">3-weekly</span>
                     <span class="mts-msg" data-seconds="86400">24h</span>
