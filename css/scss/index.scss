@@ -23,6 +23,9 @@
     @include shadows;
     margin: 5px;
 }
+.habit:not(:nth-child(1)) {
+    margin-top: 15px;
+  }
 .node {
     margin: 2.5px;
 }

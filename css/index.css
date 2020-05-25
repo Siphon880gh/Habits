@@ -34,48 +34,53 @@
 }
 
 /* line 26, scss/index.scss */
+.habit:not(:nth-child(1)) {
+  margin-top: 15px;
+}
+
+/* line 29, scss/index.scss */
 .node {
   margin: 2.5px;
 }
 
-/* line 29, scss/index.scss */
+/* line 32, scss/index.scss */
 .node .fa-link {
   display: none;
 }
 
-/* line 32, scss/index.scss */
+/* line 35, scss/index.scss */
 .node .fa-link.active {
   display: inline;
 }
 
 /* Reuseable */
-/* line 36, scss/index.scss */
+/* line 39, scss/index.scss */
 .clickable {
   cursor: pointer;
 }
 
-/* line 39, scss/index.scss */
+/* line 42, scss/index.scss */
 .clickable:hover {
   color: red;
 }
 
-/* line 42, scss/index.scss */
+/* line 45, scss/index.scss */
 .edit-mode-component:not(.active) {
   display: none;
 }
 
-/* line 45, scss/index.scss */
+/* line 48, scss/index.scss */
 .text-red {
   color: red;
 }
 
-/* line 48, scss/index.scss */
+/* line 51, scss/index.scss */
 .collapsed {
   height: 0;
   overflow-y: hidden;
 }
 
-/* line 52, scss/index.scss */
+/* line 55, scss/index.scss */
 label {
   font-style: italic;
   font-weight: 400;
