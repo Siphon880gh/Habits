@@ -48,7 +48,10 @@ session_start();
     <body>
         <div class="container">
             <div id="title">Build Habits</div>
-            <div id="app-desc"><?php echo date("m/d/y"); ?></div>
+            <div id="app-desc">
+                <b style="display:block; font-weight:600; margin-bottom:10px;">By Weng Fei Fung</b>
+                <?php echo date("m/d/y"); ?>
+            </div>
             <?php include("comps/nav.php"); ?>
 
             <main class="list-categories">
@@ -65,7 +68,7 @@ session_start();
             ?>
             </main>
 
-            <div style="margin-top:40px;">
+            <div class="hide" id="tests1">
                     <div>Testing:</div>
                     <div>
                         <label for="override-date">Override today's date</label>
@@ -74,14 +77,24 @@ session_start();
                     </div>
             </div>
 
-            <div style="margin-top:20px;">
-                    <div>Manage Account:</div>
+            <div id="account-manage">
+                    <!-- <div>Manage Account:</div> -->
                     <div>
                         <a href="?guest">Guest</a>
                         <span>&nbsp;</span>
-                        <a href="access/login.php">Login</a>
+                        <?php
+                            if( isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]===1 ) {
+                                echo '<a href="access/login.php">Switch</a>';
+                            } else {
+                                echo '<a href="access/login.php">Login</a>';
+                            }
+                        ?>
                         <span>&nbsp;</span>
-                        <a href="access/refresh-logout.php">Logout</a>
+                        <?php
+                            if( isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]===1 ) {
+                                echo '<a href="access/refresh-logout.php">Logout</a>';
+                            }
+                        ?>
                     </div>
             </div>
 
