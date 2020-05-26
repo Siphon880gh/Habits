@@ -10,7 +10,7 @@ function toggleEditMode(btn) {
 } // toggleEditMode
 
 function creatingNewCategory() {
-    var what = prompt("What is the new category called?");
+    var what = prompt("What is the new collection called?");
     if(what!==null && what.length && typeof what!=="undefined") {
         // Init
         var atTop = confirm("Insert at the top?");
@@ -30,6 +30,7 @@ function creatingNewCategory() {
             // alert("Inserting to the bottom.");
             $dest.append($template);
         }
+        $("#modal-add").modal("hide");
         save();
     } // valid
 } // creatingNewCategory
@@ -70,6 +71,8 @@ $(document).on("show.bs.modal", "#modal-add", ()=> {
     var templater_dd = Handlebars.compile( $("#template-dropdown--adder").html() );
     var categories = $(".category > header > .title").map((i, title)=>$(title).text()).toArray();
     var $select = $("#modal-add select");
+    if(categories.length===0) $("#ui-create-habit").hide();
+    else $("#ui-create-habit").show();
     
     $select.html( templater_dd({ categories: categories }) )
     .on("change", (event)=> {
@@ -77,12 +80,7 @@ $(document).on("show.bs.modal", "#modal-add", ()=> {
         event.preventDefault();
         var i = $("#modal-add select")[0].selectedIndex;
         var option = $("#modal-add select")[0][i];
-        var isUserWantsNewCategory = option.value==="new-category";
-        if(isUserWantsNewCategory) {
-            creatingNewCategory();
-        } else {
-            creatingNewHabit(option.text, i-2); // dropdown "", "Create new category", "Category 1", "Category 2" // so [0, 1, 2, 3...] // so i-2
-        }
+        creatingNewHabit(option.text, i-1); // dropdown "", "Create new category", "Category 1", "Category 2" // so [0, 1, 2, 3...] // so i-2
         $("#modal-add").modal("hide");
     })
 }); // ondom
