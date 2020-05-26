@@ -7,6 +7,62 @@ function paintIndicators() {
     var $results = $(".result");
 
     $results.each((i, result)=>{
+
+        // Traverse DOM
+        var $result = $(result);
+        var $habit = $result.closest(".habit");
+        // debugger;
+        // var $current = $(".habit").first().find(".log").last();
+        var $current = $habit.find(".log").last();
+        // console.log($current.length);
+        if($current.length===0) return true;
+        var $temp = $("<div></div>");
+        $temp.append($current.clone());
+        // debugger;
+
+        while(true) {
+            var $prev = $current.prev();
+            if($prev.length===0) break;
+
+            var class1 = $current[0].className;
+            var class2 = $prev[0].className;
+            console.log(`%cclass1 vs class2 traversing from last log to previous log: %c${class1} vs ${class2}`, "font-weight:600;", "font-weight:500;");
+            // debugger;
+
+            if(class1===class2) { 
+                $temp.append($prev.clone()); 
+                $current = $prev; 
+            } else {
+                break;
+            }
+
+        } // while traversing
+        // debugger;
+
+        var goalChains = parseInt($habit.find(".msgs-container-goal .mts-msg.active").text());
+        var actualChains = $temp.find(".chain-icon.active").length;
+
+        if(actualChains>=goalChains) {
+            var $good = $("<span class='indicator-good'>Good</span>");
+            $result.html($good);
+        } else {
+            var $fail = $("<span class='indicator-wip'>WIP due <span class='due-date active'></span>");
+            var shiftCycle = $habit.find(".msgs-container-grouper .mts-msg.active").data("seconds");
+
+            // In the current cycle:
+            var $oldest = $temp.find(".log").last();
+            var $recent = $temp.find(".log").first();
+
+            var unixNextCycle = $oldest.data("unix") + shiftCycle;
+            var dateNextCycle = moment.unix(unixNextCycle).format("MM/DD/YY");
+            $fail.find(".due-date").text(dateNextCycle);
+            $result.html($fail);
+            debugger;
+        }
+
+        return false;
+
+        // Below code tells you how many hours or days left but is broken because it gives false negatives/positives
         // init
         var $result = $(result);
         var $habit = $result.closest(".habit");

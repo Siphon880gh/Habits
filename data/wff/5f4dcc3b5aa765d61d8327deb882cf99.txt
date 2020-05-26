@@ -1,4 +1,5 @@
-<div class="category">
+
+            <div class="category">
         <nav class="nav-category edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
             <div class="handle-category fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
@@ -9,7 +10,7 @@
             <div class="notes" onblur="save();">No notes</div>
         </header>
 
-        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="0">
+        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="1590496197">
         <nav class="nav-habit edit-mode-component">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="handle-habit fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
@@ -19,7 +20,7 @@
             <span class="title" onblur="save();">test</span><span class="title-rename fa fa-edit edit-mode-component clickable" onclick="renameTitleAndNotes(this)"></span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP <span class="due-date">05/26/20 due</span><span class="days-left-info active">7 days left</span></span></span>
+    <span class="result"><span class="indicator-good">Good</span></span>
 </div>            <div class="notes" onblur="save();">No notes</div>
         </header>
 
@@ -65,11 +66,19 @@
 
         </nav>
         <div class="logs collapsable">
-            <div class="log clickable color0" data-unix="1589878211" data-cycle-num="0">
+            <div class="log clickable faded color1" data-unix="1589878211" data-cycle-num="0">
         &nbsp;
         <span class="date">05/19/20 01:50:11</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="log clickable color1" data-unix="1590496197" data-cycle-num="1">
+        &nbsp;
+        <span class="date">05/26/20 05:29:57</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(255, 0, 0);"></span>
+    </div><div class="log clickable color1" data-unix="1590496197" data-cycle-num="1">
+        &nbsp;
+        <span class="date">05/26/20 05:29:57</span>
         <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
     </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div></div>
     </div>
-                        
+                                    

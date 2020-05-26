@@ -1,4 +1,4 @@
 <div class="indicator-current-group-completed">
-    <label>Current cycle:&nbsp;</label>
+    <label>Current group:&nbsp;</label>
     <span class="result"></span>
 </div>

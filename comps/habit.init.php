@@ -44,7 +44,7 @@
         <nav>
             <!-- Grouper aka group together logs -->
             <div class="msgs-container msgs-container-grouper collapsable">
-                <span class="msgs-label">Group logs by color: </span>
+                <span class="msgs-label">Cycle: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active" data-seconds="604800">Weekly</span>
                     <span class="mts-msg" data-seconds="2628000">Monthly</span>
@@ -58,7 +58,7 @@
 
             <!-- Chainer creates chain icons -->
             <div class="msgs-container msgs-container-chainer collapsable">
-                <span class="msgs-label">Chain logs when between: </span>
+                <span class="msgs-label">Consecutive logs < </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active" data-seconds="86400">24h</span>
                     <span class="mts-msg" data-seconds="172800">48h</span>
@@ -68,7 +68,7 @@
 
             <!-- Goal is how many chains in a group -->
             <div class="msgs-container msgs-container-goal collapsable">
-                <span class="msgs-label">Desired consecutive chains in a group: </span>
+                <span class="msgs-label">Goal consecutive goals in a cycle: </span>
                 <span class="msgs clickable">
                     <span class="mts-msg active">1</span>
                     <span class="mts-msg">2</span>
