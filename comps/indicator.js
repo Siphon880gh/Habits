@@ -57,7 +57,7 @@ function paintIndicators() {
             var dateNextCycle = moment.unix(unixNextCycle).format("MM/DD/YY");
             $fail.find(".due-date").text(dateNextCycle);
             $result.html($fail);
-            debugger;
+            // debugger;
         }
 
         return false;

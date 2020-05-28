@@ -34,3 +34,22 @@ function getTodayDateValues() {
         humanReadable: moment(now).format("MM/DD/YY HH:mm:ss")
     }
 }
+
+function itrPrevDate() {
+    var currentDate = $("#override-date").val();
+    var newDate = moment( currentDate ).subtract(1, "days").format("YYYY-MM-DD");
+    $("#override-date").val(newDate);
+}
+
+function itrNextDate() {
+    var currentDate = $("#override-date").val();
+    var newDate = moment( currentDate ).add(1, "days").format("YYYY-MM-DD");
+    $("#override-date").val(newDate);
+}
+
+$(()=>{
+    var todaysDateHuman = moment().format("MM/DD/YYYY");
+    var todaysDateVal = moment().format("YYYY-MM-DD"); // the plugin only accepts this format
+    $("#todays-date").text(todaysDateHuman);
+    $("#override-date").val(todaysDateVal);
+})

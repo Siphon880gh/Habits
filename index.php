@@ -68,12 +68,22 @@ session_start();
             ?>
             </main>
 
-            <div class="hide" id="tests1">
-                    <div>Testing:</div>
+            <div class="hide0" id="tests1">
+                    <!-- <div>Change logging date:</div> -->
+                    <div>
+                        <span style="width:135px; display:inline-block; margin-bottom:5px;">Today's date: </span>
+                        <span id="todays-date"></span>
+                    </div>
                     <div>
                         <label for="override-date">Override today's date</label>
                             <input id="override-date" type="date">
                         </label>
+                        <span>
+                            <span>&nbsp;&nbsp;</span>
+                            <i class="fa fa-arrow-left clickable" onclick="itrPrevDate();"></i>
+                            <span>&nbsp;&nbsp;</span>
+                            <i class="fa fa-arrow-right clickable" onclick="itrNextDate();"></i>
+                        </span>
                     </div>
             </div>
 
