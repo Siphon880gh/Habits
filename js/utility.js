@@ -4,7 +4,8 @@ $(()=>{
 });
 
 function isOverriddenDate() {
-    return $("#override-date").length>0 && $("#override-date").val().length>0; // mm/dd/yyyy is actually blank value
+    return $("#override-date").hasClass("active");
+    // return $("#override-date").length>0 && $("#override-date").val().length>0; // mm/dd/yyyy is actually blank value
 }
 
 function getOverriddenDateValues() {

@@ -52,4 +52,5 @@ $(()=>{
     var todaysDateVal = moment().format("YYYY-MM-DD"); // the plugin only accepts this format
     $("#todays-date").text(todaysDateHuman);
     $("#override-date").val(todaysDateVal);
+    $(".tooltip").remove(); // Fixed Bug: Sometimes tooltips get visible and stuck on loading
 })

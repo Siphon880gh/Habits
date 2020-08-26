@@ -95,6 +95,7 @@ $(".add-log").livequery( (i,el)=> {
 function paintLogsAndChains() {
     // console.log("f paintLogsAndChains");
     var $logContainers = $(".logs");
+    $(".tooltip").remove(); // Fixed Bug: Sometimes tooltips get visible and stuck on loading
 
     // At every habit's logs container
     $logContainers.each((i, logContainer)=>{ 
@@ -111,6 +112,12 @@ function paintLogsAndChains() {
         $logs.each((j, log)=>{ 
 
             var $current = $(log);
+            
+            // Set bootstrap tooltips:
+            var todaysDate = moment($("#override-date").val()).format("MM/DD/YY");
+            $current.attr({"title":todaysDate,"data-placement":"bottom"}).tooltip();
+
+            // Set attributes
             var tcurrent = $current.attr("data-unix");
             tcurrent = parseInt(tcurrent);
 

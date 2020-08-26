@@ -34,7 +34,7 @@ session_start();
 
     <link href="css/index.css?v=<?php echo time(); ?>" rel="stylesheet">
     <script src="js/app.js?v=<?php echo time(); ?>"></script>
-    <script src="js/test.js?v=<?php echo time(); ?>"></script>
+    <script src="js/utility.js?v=<?php echo time(); ?>"></script>
 
     <?php
         include("comps/nav.init.php");
@@ -76,7 +76,7 @@ session_start();
                     </div>
                     <div>
                         <label for="override-date">Override today's date</label>
-                            <input id="override-date" type="date">
+                            <input id="override-date" type="date" onchange="$(this).addClass('active')">
                         </label>
                         <span>
                             <span>&nbsp;&nbsp;</span>

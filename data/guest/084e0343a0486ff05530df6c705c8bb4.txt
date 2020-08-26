@@ -1,5 +1,6 @@
 
             
+            
             <div class="category">
         <nav class="nav-category edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeCategory(this);"></div><br>
@@ -11,7 +12,7 @@
             <div class="notes" onblur="save();">No notes</div>
         </header>
 
-        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="0">
+        <div class="list-habits ui-sortable"><div class="habit" data-last-completed-chain="1598425201">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
             <div class="handle-habit fa fa-arrows-alt clickable ui-sortable-handle"></div><br>
@@ -21,7 +22,7 @@
             <span class="title" onblur="save();">Habit2</span><span class="title-rename fa fa-edit edit-mode-component clickable active" onclick="renameTitleAndNotes(this)"></span>
             <div class="indicator-current-group-completed">
     <label>Current cycle:&nbsp;</label>
-    <span class="result"><span class="indicator-wip">WIP due <span class="due-date active">06/02/20</span></span></span>
+    <span class="result"><span class="indicator-good">Good</span></span>
 </div>            <div class="notes" onblur="save();">No notes</div>
         </header>
 
@@ -67,7 +68,15 @@
 
         </nav>
         <div class="logs collapsable">
-            <div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
+            <div class="log clickable color0" data-unix="1598425201" title="2020-08-26" data-placement="bottom" data-original-title="2020-08-26" data-cycle-num="0">
+        &nbsp;
+        <span class="date">08/26/20 00:00:01</span>
+        <span class="fa fa-chain chain-icon active" style="color: rgb(128, 0, 128);"></span>
+    </div><div class="log clickable color0" data-unix="1598425202" title="2020-08-26" data-placement="bottom" data-original-title="2020-08-26" data-cycle-num="0">
+        &nbsp;
+        <span class="date">08/26/20 00:00:02</span>
+        <span class="fa fa-chain chain-icon" style="color: rgb(0, 0, 0);"></span>
+    </div><div class="add-log clickable"><span class="fa fa-plus"></span>&nbsp;Log</div>        </div>
     </div><div class="habit" data-last-completed-chain="0">
         <nav class="nav-habit edit-mode-component active">
             <div class="fa fa-close clickable" onclick="closeHabit(this);"></div><br>
@@ -190,4 +199,4 @@
             
             
             
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
