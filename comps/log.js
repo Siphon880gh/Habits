@@ -84,11 +84,19 @@ $(".add-log").livequery( (i,el)=> {
 
         $log.attr("data-unix", unix);
         $log.find(".date").text(humanReadable)
-        $log.insertBefore($add);
 
-        setTimeout(()=> { paintLogsAndChains(); }, 100);
-        setTimeout(()=> { paintIndicators(); }, 150);
-        setTimeout(()=> { save(); }, 200);
+        var finalConfirmedTime = prompt("Adjust the time as needed", humanReadable)
+        if(finalConfirmedTime!==null && /^(0?[1-9]|1[0-2])\/(0?[1-9]|[12]\d|3[01])\/\d{2} (2[0-3]|[01]\d):([0-5]\d):([0-5]\d)$/.test(finalConfirmedTime)) {
+            $log.find(".date").text(finalConfirmedTime);
+            unix = moment(finalConfirmedTime).unix()
+            $log.attr("data-unix", unix);
+            $log.insertBefore($add);
+    
+            setTimeout(()=> { paintLogsAndChains(); }, 100);
+            setTimeout(()=> { paintIndicators(); }, 150);
+            setTimeout(()=> { save(); }, 200);
+        }
+
     })
 });
 

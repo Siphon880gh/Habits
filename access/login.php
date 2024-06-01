@@ -4,7 +4,11 @@ session_start();
 if(isset($_GET["username"]) && isset($_GET["passw"]) ) {
 	$folder = $_GET["username"];
 	$filename_ = $_GET["passw"];
-	$filename = md5($filename_);
+
+    // Forgot my password for wff so Im gonna go plain:
+	// $filename = md5($filename_);
+	$filename = $filename_;
+    
 	// die("data/$folder/$filename.txt");
 
 	if(file_exists("../data/$folder/$filename.txt")) {
