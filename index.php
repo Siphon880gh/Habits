@@ -27,7 +27,7 @@ session_start();
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="//raw.githack.com/hazzik/livequery/master/src/jquery.livequery.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script>
 
     <script src="vendors/multi-text-states.js"></script>
     <link href="vendors/multi-text-states.css" rel="stylesheet">
@@ -118,23 +118,23 @@ session_start();
         <!-- Designer: Open Sans, Lato, FontAwesome, Waypoints, Skrollr, Pixel-Em-Converter -->
         <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.0/lib/jquery.waypoints.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
         <script src="//raw.githack.com/filamentgroup/jQuery-Pixel-Em-Converter/master/pxem.jQuery.js"></script>
         
         <!-- Rendering: Handlebars JS, Sprintf JS -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.0.5/dist/handlebars.min.js"></script>
         <script src="//raw.githack.com/azatoth/jquery-sprintf/master/jquery.sprintf.js"></script>
         
         <!-- Compatibility: Modernizr, jQuery Migrate (check browser) -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/npm-modernizr@2.8.3/modernizr.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         
         <!-- Mobile: jQuery UI, jQuery UI Touch Punch -->
         <link href="//code.jquery.com/ui/1.11.3/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
        
         <!-- Bootstrap JS -->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

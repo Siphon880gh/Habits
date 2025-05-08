@@ -2,6 +2,27 @@
 session_start();
 
 if(isset($_GET["username"]) && isset($_GET["passw"]) ) {
+
+    $hasErrored = false;
+
+    if(strlen($_GET["username"])>0 && strlen($_GET["passw"])>0 ) {
+        // Sanitize username and password
+        $username = htmlspecialchars(strip_tags(trim($_GET["username"])), ENT_QUOTES, 'UTF-8');
+        $password = htmlspecialchars(strip_tags(trim($_GET["passw"])), ENT_QUOTES, 'UTF-8');
+        
+        // Basic validation
+        if(strlen($username) > 50 || !preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
+            // die("Invalid username format");
+            $hasErrored = true;
+        }
+        
+        // Replace original GET params with sanitized versions
+        $_GET["username"] = $username;
+        $_GET["passw"] = $password;
+    } else {
+        $hasErrored = true;
+    }
+
 	$folder = $_GET["username"];
 	$filename_ = $_GET["passw"];
 
@@ -11,7 +32,7 @@ if(isset($_GET["username"]) && isset($_GET["passw"]) ) {
     
 	// die("data/$folder/$filename.txt");
 
-	if(file_exists("../data/$folder/$filename.txt")) {
+	if(!$hasErrored && file_exists("../data/$folder/$filename.txt")) {
 		$_SESSION["loggedIn"]=1;
 		$_SESSION["filepath"]="data/$folder/$filename.txt";
 		header("location: ../index.php");
